@@ -1,0 +1,597 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BASE_READ_SIZE	ClientConn.cpp	18;"	d	file:
+BEGIN_JS_FORM_MAP	jsmfc/FormDef.h	100;"	d
+BEGIN_PB_FORM_MAP	pbmfc/FormDef.h	114;"	d
+BlockSize	Buffer.h	/^		uint32_t BlockSize;$/;"	m	class:evwork::CBuffer
+Body	jsmfc/Request.h	/^		const char* Body()$/;"	f	class:js::Request
+Body	jsmfc/Sender.h	/^		const char* Body()$/;"	f	class:js::Sender
+Body	pbmfc/Request.h	/^		const char* Body()$/;"	f	class:pb::Request
+Body	pbmfc/Sender.h	/^		const char* Body()$/;"	f	class:pb::Sender
+BodySize	jsmfc/Request.h	/^		uint32_t BodySize()$/;"	f	class:js::Request
+BodySize	jsmfc/Sender.h	/^		size_t BodySize() const$/;"	f	class:js::Sender
+BodySize	pbmfc/Request.h	/^		uint32_t BodySize()$/;"	f	class:pb::Request
+BodySize	pbmfc/Sender.h	/^		size_t BodySize() const$/;"	f	class:pb::Sender
+CAsyncDataHandler	jsmfc/AsyncDataHandler.cpp	/^CAsyncDataHandler::CAsyncDataHandler()$/;"	f	class:CAsyncDataHandler
+CAsyncDataHandler	jsmfc/AsyncDataHandler.h	/^	class CAsyncDataHandler$/;"	c	namespace:js
+CAsyncDataHandler	pbmfc/AsyncDataHandler.cpp	/^CAsyncDataHandler::CAsyncDataHandler()$/;"	f	class:CAsyncDataHandler
+CAsyncDataHandler	pbmfc/AsyncDataHandler.h	/^	class CAsyncDataHandler$/;"	c	namespace:pb
+CAsyncWriter	AsyncWriter.cpp	/^CAsyncWriter::CAsyncWriter()$/;"	f	class:CAsyncWriter
+CAsyncWriter	AsyncWriter.h	/^	class CAsyncWriter$/;"	c	namespace:evwork
+CBuffer	Buffer.h	/^		CBuffer(uint32_t _blocksize, uint32_t _minblock)$/;"	f	class:evwork::CBuffer
+CBuffer	Buffer.h	/^	class CBuffer$/;"	c	namespace:evwork
+CClientConn	ClientConn.cpp	/^CClientConn::CClientConn(const std::string& strPeerIp, uint16_t uPeerPort16)$/;"	f	class:CClientConn
+CClientConn	ClientConn.cpp	/^CClientConn::CClientConn(int fd, const std::string& strPeerIp, uint16_t uPeerPort16)$/;"	f	class:CClientConn
+CClientConn	ClientConn.h	/^	class CClientConn$/;"	c	namespace:evwork
+CConnManager	ConnManager.cpp	/^CConnManager::CConnManager()$/;"	f	class:CConnManager
+CConnManager	ConnManager.h	/^	class CConnManager$/;"	c	namespace:evwork
+CDataEvent	example/testrecv.cpp	/^class CDataEvent$/;"	c	file:
+CDataHandler	jsmfc/DataHandler.cpp	/^CDataHandler::CDataHandler()$/;"	f	class:CDataHandler
+CDataHandler	jsmfc/DataHandler.h	/^	class CDataHandler$/;"	c	namespace:js
+CDataHandler	pbmfc/DataHandler.cpp	/^CDataHandler::CDataHandler()$/;"	f	class:CDataHandler
+CDataHandler	pbmfc/DataHandler.h	/^	class CDataHandler$/;"	c	namespace:pb
+CEVLoop	EVComm.h	/^	class CEVLoop$/;"	c	namespace:evwork
+CEVLoop	EVLoop.cpp	/^CEVLoop::CEVLoop()$/;"	f	class:CEVLoop
+CEnv	EVWork.h	/^	class CEnv$/;"	c	namespace:evwork
+CFromHandle	jsmfc/FormDef.h	/^	class CFromHandle$/;"	c	namespace:js
+CListenConn	ListenConn.cpp	/^CListenConn::CListenConn(uint16_t uListenPort, const std::string& strBindIp)$/;"	f	class:CListenConn
+CListenConn	ListenConn.h	/^	class CListenConn$/;"	c	namespace:evwork
+CLogic	example/jsonsrv/logic.cpp	/^CLogic::CLogic()$/;"	f	class:CLogic
+CLogic	example/jsonsrv/logic.h	/^class CLogic$/;"	c
+CMfcAppContext	jsmfc/MfcAppContext.cpp	/^CMfcAppContext::CMfcAppContext()$/;"	f	class:CMfcAppContext
+CMfcAppContext	jsmfc/MfcAppContext.h	/^	class CMfcAppContext$/;"	c	namespace:js
+CMfcAppContext	pbmfc/MfcAppContext.cpp	/^CMfcAppContext::CMfcAppContext()$/;"	f	class:CMfcAppContext
+CMfcAppContext	pbmfc/MfcAppContext.h	/^	class CMfcAppContext$/;"	c	namespace:pb
+CSyslogReport	Logger.h	/^		CSyslogReport()$/;"	f	class:evwork::CSyslogReport
+CSyslogReport	Logger.h	/^	class CSyslogReport$/;"	c	namespace:evwork
+CTest	example/testsend.cpp	/^	CTest()$/;"	f	class:CTest
+CTest	example/testsend.cpp	/^class CTest$/;"	c	file:
+CThreadEnv	EVWork.cpp	/^CThreadEnv::CThreadEnv()$/;"	f	class:CThreadEnv
+CThreadEnv	EVWork.h	/^	class CThreadEnv$/;"	c	namespace:evwork
+CThreadWorker	jsmfc/AsyncDataHandler.cpp	/^CThreadWorker::CThreadWorker(CAsyncDataHandler* pParent)$/;"	f	class:CThreadWorker
+CThreadWorker	jsmfc/AsyncDataHandler.h	/^	class CThreadWorker$/;"	c	namespace:js
+CThreadWorker	pbmfc/AsyncDataHandler.cpp	/^CThreadWorker::CThreadWorker(CAsyncDataHandler* pParent)$/;"	f	class:CThreadWorker
+CThreadWorker	pbmfc/AsyncDataHandler.h	/^	class CThreadWorker$/;"	c	namespace:pb
+CThreadWriter	AsyncWriter.h	/^	class CThreadWriter$/;"	c	namespace:evwork
+CWriter	Writer.cpp	/^CWriter::CWriter()$/;"	f	class:CWriter
+CWriter	Writer.h	/^	class CWriter$/;"	c	namespace:evwork
+CXXFLAGS	Makefile	/^CXXFLAGS    = -Wall -ggdb -pthread -D__DEBUG__$/;"	m
+CXXFLAGS	example/Makefile	/^CXXFLAGS    = -Wall -ggdb -pthread$/;"	m
+CXXFLAGS	example/jsonsrv/Makefile	/^CXXFLAGS    = -Wall -ggdb -pthread$/;"	m
+CXXFLAGS_EXTERN	Makefile	/^CXXFLAGS_EXTERN =$/;"	m
+CXXFLAGS_EXTERN	example/Makefile	/^CXXFLAGS_EXTERN =$/;"	m
+CXXFLAGS_EXTERN	example/jsonsrv/Makefile	/^CXXFLAGS_EXTERN =$/;"	m
+CXXFLAGS_R	Makefile	/^CXXFLAGS_R    = -Wall -O2 -O3 -pthread$/;"	m
+DECLARE_JS_FORM_MAP	example/jsonsrv/logic.h	/^	DECLARE_JS_FORM_MAP;$/;"	m	class:CLogic
+DECLARE_JS_FORM_MAP	jsmfc/FormDef.h	96;"	d
+DECLARE_PB_FORM_MAP	pbmfc/FormDef.h	110;"	d
+DEFAULT_PACKET_LIMIT	jsmfc/DataHandler.cpp	17;"	d	file:
+DEFAULT_PACKET_LIMIT	jsmfc/DataHandler.cpp	20;"	d	file:
+DEFAULT_PACKET_LIMIT	pbmfc/DataHandler.cpp	17;"	d	file:
+DEFAULT_PACKET_LIMIT	pbmfc/DataHandler.cpp	20;"	d	file:
+DEF_CONN_TIMEOUT	ClientConn.cpp	15;"	d	file:
+DEF_LISTEN_BACKLOG	ListenConn.cpp	15;"	d	file:
+DEF_WORKER_COUNT	jsmfc/AsyncDataHandler.cpp	19;"	d	file:
+DEF_WORKER_COUNT	jsmfc/AsyncDataHandler.cpp	20;"	d	file:
+DEF_WORKER_COUNT	pbmfc/AsyncDataHandler.cpp	19;"	d	file:
+DEF_WORKER_COUNT	pbmfc/AsyncDataHandler.cpp	20;"	d	file:
+Data	jsmfc/Sender.h	/^		const char* Data()$/;"	f	class:js::Sender
+Data	pbmfc/Sender.h	/^		const char* Data()$/;"	f	class:pb::Sender
+Debug	Logger.h	/^		Debug = 7		\/\/ LOG_DEBUG$/;"	e	enum:evwork::LogLevel
+DefaultDispatch	jsmfc/MfcAppContext.cpp	/^void CMfcAppContext::DefaultDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CMfcAppContext
+DefaultDispatch	pbmfc/MfcAppContext.cpp	/^void CMfcAppContext::DefaultDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CMfcAppContext
+END_JS_FORM_MAP	jsmfc/FormDef.h	104;"	d
+END_PB_FORM_MAP	pbmfc/FormDef.h	118;"	d
+ENTRY_MAP_t	jsmfc/MfcAppContext.h	/^		typedef std::tr1::unordered_map<JS_CMD_TYPE, FormEntry*> ENTRY_MAP_t;$/;"	t	class:js::CMfcAppContext
+ENTRY_MAP_t	pbmfc/MfcAppContext.h	/^		typedef std::tr1::unordered_map<PB_CMD_TYPE, FormEntry*> ENTRY_MAP_t;$/;"	t	class:pb::CMfcAppContext
+Error	Logger.h	/^		Error = 3,		\/\/ LOG_ERR$/;"	e	enum:evwork::LogLevel
+FormEntry	jsmfc/FormDef.h	/^	struct FormEntry$/;"	s	namespace:js
+FormEntry	pbmfc/FormDef.h	/^	struct FormEntry$/;"	s	namespace:pb
+FormHandleT	pbmfc/FormDef.h	/^	class FormHandleT$/;"	c	namespace:pb
+FormProcType	jsmfc/FormDef.h	/^	enum FormProcType$/;"	g	namespace:js
+FormProcType	pbmfc/FormDef.h	/^	enum FormProcType$/;"	g	namespace:pb
+Header	jsmfc/Request.h	/^		Header()$/;"	f	class:js::Header
+Header	jsmfc/Request.h	/^		Header(uint32_t uLen, JS_CMD_TYPE uCmd)$/;"	f	class:js::Header
+Header	jsmfc/Request.h	/^	class Header$/;"	c	namespace:js
+Header	pbmfc/Request.h	/^		Header()$/;"	f	class:pb::Header
+Header	pbmfc/Request.h	/^		Header(uint32_t uLen, PB_CMD_TYPE uCmd)$/;"	f	class:pb::Header
+Header	pbmfc/Request.h	/^	class Header$/;"	c	namespace:pb
+IAppContext	jsmfc/FormDef.h	/^	class IAppContext$/;"	c	namespace:js
+IAppContext	pbmfc/FormDef.h	/^	class IAppContext$/;"	c	namespace:pb
+IAppContextAware	jsmfc/FormDef.h	/^		IAppContextAware() : m_pAppContext(NULL) {}$/;"	f	class:js::IAppContextAware
+IAppContextAware	jsmfc/FormDef.h	/^	class IAppContextAware$/;"	c	namespace:js
+IAppContextAware	pbmfc/FormDef.h	/^		IAppContextAware() : m_pAppContext(NULL) {}$/;"	f	class:pb::IAppContextAware
+IAppContextAware	pbmfc/FormDef.h	/^	class IAppContextAware$/;"	c	namespace:pb
+IConn	EVComm.h	/^		IConn() : m_fd(-1), m_cid(0) {}$/;"	f	struct:evwork::IConn
+IConn	EVComm.h	/^	struct IConn$/;"	s	namespace:evwork
+IConnManager	EVComm.h	/^	struct IConnManager$/;"	s	namespace:evwork
+IDataEvent	EVComm.h	/^	struct IDataEvent$/;"	s	namespace:evwork
+IFromHandle	pbmfc/FormDef.h	/^	class IFromHandle$/;"	c	namespace:pb
+IHandle	EVComm.h	/^		IHandle() : m_fd(-1), m_ev(0) { m_evio.data = this; }$/;"	f	struct:evwork::IHandle
+IHandle	EVComm.h	/^	struct IHandle$/;"	s	namespace:evwork
+ILinkEvent	EVComm.h	/^	struct ILinkEvent$/;"	s	namespace:evwork
+ILogReport	Logger.h	/^	class ILogReport$/;"	c	namespace:evwork
+ILogReportAware	Logger.h	/^		ILogReportAware() : m_pLogReport(NULL) {}$/;"	f	class:evwork::ILogReportAware
+ILogReportAware	Logger.h	/^	class ILogReportAware$/;"	c	namespace:evwork
+INCLUDE	Makefile	/^INCLUDE = -I. -I..$/;"	m
+INCLUDE	example/Makefile	/^INCLUDE = -I. -I.. -I..\/..$/;"	m
+INCLUDE	example/jsonsrv/Makefile	/^INCLUDE = -I. -I.. -I..\/.. -I..\/..\/..$/;"	m
+IWriter	EVComm.h	/^	struct IWriter$/;"	s	namespace:evwork
+Info	Logger.h	/^		Info = 6,		\/\/ LOG_INFO$/;"	e	enum:evwork::LogLevel
+JS_CMD_TYPE	jsmfc/Request.h	15;"	d
+JS_HEADER_SIZE	jsmfc/Request.h	16;"	d
+JS_HTONL	jsmfc/Request.h	/^inline uint32_t JS_HTONL(uint32_t i32) $/;"	f
+JS_HTONL	jsmfc/Request.h	22;"	d
+JS_HTONLL	jsmfc/Request.h	/^inline uint64_t JS_HTONLL(uint64_t i64) $/;"	f
+JS_HTONLL	jsmfc/Request.h	23;"	d
+JS_HTONS	jsmfc/Request.h	/^inline uint16_t JS_HTONS(uint16_t i16) $/;"	f
+JS_HTONS	jsmfc/Request.h	21;"	d
+JS_NTOHL	jsmfc/Request.h	43;"	d
+JS_NTOHLL	jsmfc/Request.h	44;"	d
+JS_NTOHS	jsmfc/Request.h	42;"	d
+LIBRARY	Makefile	/^LIBRARY =$/;"	m
+LIBRARY	example/Makefile	/^LIBRARY =$/;"	m
+LIBRARY	example/jsonsrv/Makefile	/^LIBRARY =$/;"	m
+LINKFLAGS	Makefile	/^LINKFLAGS   = -Wl,-rpath,.\/:..\/bin$/;"	m
+LINKFLAGS	example/Makefile	/^LINKFLAGS   = -Wl,-rpath,.\/:..\/bin$/;"	m
+LINKFLAGS	example/jsonsrv/Makefile	/^LINKFLAGS   = -Wl,-rpath,.\/:..\/bin$/;"	m
+LINKFLAGS_EXTERN	Makefile	/^LINKFLAGS_EXTERN =$/;"	m
+LINKFLAGS_EXTERN	example/Makefile	/^LINKFLAGS_EXTERN = -L..\/ -levwork -lev$/;"	m
+LINKFLAGS_EXTERN	example/jsonsrv/Makefile	/^LINKFLAGS_EXTERN = -L..\/.. -levwork -lev -ljsoncpp -lboost_thread-mt$/;"	m
+LINKFLAGS_MT	Makefile	/^LINKFLAGS_MT = $(LINKFLAGS)$/;"	m
+LINKFLAGS_MT	example/Makefile	/^LINKFLAGS_MT = $(LINKFLAGS)$/;"	m
+LINKFLAGS_MT	example/jsonsrv/Makefile	/^LINKFLAGS_MT = $(LINKFLAGS)$/;"	m
+LOG	EVWork.h	77;"	d
+LogLevel	Logger.h	/^	enum LogLevel$/;"	g	namespace:evwork
+MAX_INPUT_SIZE	ClientConn.cpp	16;"	d	file:
+MAX_OUTPUT_SIZE	ClientConn.cpp	17;"	d	file:
+MESSAGE_ID_1	example/jsonsrv/logic.cpp	7;"	d	file:
+MESSAGE_ID_2	example/jsonsrv/logic.cpp	8;"	d	file:
+MinBlock	Buffer.h	/^		uint32_t MinBlock;$/;"	m	class:evwork::CBuffer
+Notice	Logger.h	/^		Notice = 5,		\/\/ LOG_NOTICE$/;"	e	enum:evwork::LogLevel
+OBJ_FILES	Makefile	/^OBJ_FILES   = $(SRC_FILES:.cpp=.o)$/;"	m
+OBJ_FILES	example/Makefile	/^OBJ_FILES   = $(SRC_FILES:.cpp=.o)$/;"	m
+OBJ_FILES	example/jsonsrv/Makefile	/^OBJ_FILES   = $(SRC_FILES:.cpp=.o)$/;"	m
+OBJ_FILES_R	Makefile	/^OBJ_FILES_R   = $(SRC_FILES:.cpp=.ro)$/;"	m
+ON_JS_REQUEST	jsmfc/FormDef.h	108;"	d
+ON_JS_REQUEST_CONN	jsmfc/FormDef.h	111;"	d
+ON_PB_REQUEST	pbmfc/FormDef.h	122;"	d
+ON_PB_REQUEST_CONN	pbmfc/FormDef.h	125;"	d
+PB_CMD_TYPE	pbmfc/Request.h	13;"	d
+PB_HEADER_SIZE	pbmfc/Request.h	14;"	d
+PB_HTONL	pbmfc/Request.h	/^inline uint32_t PB_HTONL(uint32_t i32) $/;"	f
+PB_HTONL	pbmfc/Request.h	20;"	d
+PB_HTONLL	pbmfc/Request.h	/^inline uint64_t PB_HTONLL(uint64_t i64) $/;"	f
+PB_HTONLL	pbmfc/Request.h	21;"	d
+PB_HTONS	pbmfc/Request.h	/^inline uint16_t PB_HTONS(uint16_t i16) $/;"	f
+PB_HTONS	pbmfc/Request.h	19;"	d
+PB_NTOHL	pbmfc/Request.h	41;"	d
+PB_NTOHLL	pbmfc/Request.h	42;"	d
+PB_NTOHS	pbmfc/Request.h	40;"	d
+PHClass	jsmfc/FormDef.h	/^	struct PHClass{};$/;"	s	namespace:js
+PHClass	pbmfc/FormDef.h	/^	struct PHClass{};$/;"	s	namespace:pb
+PRINT_INTERVAL	jsmfc/DataHandler.cpp	18;"	d	file:
+PRINT_INTERVAL	jsmfc/DataHandler.cpp	21;"	d	file:
+PRINT_INTERVAL	pbmfc/DataHandler.cpp	18;"	d	file:
+PRINT_INTERVAL	pbmfc/DataHandler.cpp	21;"	d	file:
+Request	jsmfc/Request.h	/^		Request(const char *pData, uint32_t uSize, bool bCopy = false)$/;"	f	class:js::Request
+Request	jsmfc/Request.h	/^	class Request$/;"	c	namespace:js
+Request	pbmfc/Request.h	/^		Request(const char *pData, uint32_t uSize, bool bCopy = false)$/;"	f	class:pb::Request
+Request	pbmfc/Request.h	/^	class Request$/;"	c	namespace:pb
+RequestDispatch	jsmfc/MfcAppContext.cpp	/^void CMfcAppContext::RequestDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CMfcAppContext
+RequestDispatch	pbmfc/MfcAppContext.cpp	/^void CMfcAppContext::RequestDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CMfcAppContext
+SEVParam	EVWork.h	/^		SEVParam()$/;"	f	struct:evwork::SEVParam
+SEVParam	EVWork.h	/^	struct SEVParam$/;"	s	namespace:evwork
+SPacket	AsyncWriter.h	/^	struct SPacket$/;"	s	namespace:evwork
+SRC_FILES	Makefile	/^SRC_FILES   = $(wildcard *.cpp jsmfc\/*.cpp pbmfc\/*.cpp)$/;"	m
+SRC_FILES	example/Makefile	/^SRC_FILES   = $(wildcard *.cpp)$/;"	m
+SRC_FILES	example/jsonsrv/Makefile	/^SRC_FILES   = $(wildcard *.cpp)$/;"	m
+SRequestWrap	jsmfc/AsyncDataHandler.h	/^		SRequestWrap()$/;"	f	struct:js::SRequestWrap
+SRequestWrap	jsmfc/AsyncDataHandler.h	/^		SRequestWrap(Request* _pRequest, evwork::IConn* _pConn)$/;"	f	struct:js::SRequestWrap
+SRequestWrap	jsmfc/AsyncDataHandler.h	/^	struct SRequestWrap$/;"	s	namespace:js
+SRequestWrap	pbmfc/AsyncDataHandler.h	/^		SRequestWrap()$/;"	f	struct:pb::SRequestWrap
+SRequestWrap	pbmfc/AsyncDataHandler.h	/^		SRequestWrap(Request* _pRequest, evwork::IConn* _pConn)$/;"	f	struct:pb::SRequestWrap
+SRequestWrap	pbmfc/AsyncDataHandler.h	/^	struct SRequestWrap$/;"	s	namespace:pb
+Sender	jsmfc/Sender.h	/^		Sender()$/;"	f	class:js::Sender
+Sender	jsmfc/Sender.h	/^		Sender(JS_CMD_TYPE cmd, const char* pData, uint32_t uSize)$/;"	f	class:js::Sender
+Sender	jsmfc/Sender.h	/^		Sender(JS_CMD_TYPE cmd, const std::string& strData)$/;"	f	class:js::Sender
+Sender	jsmfc/Sender.h	/^		Sender(const Sender& s)$/;"	f	class:js::Sender
+Sender	jsmfc/Sender.h	/^	class Sender$/;"	c	namespace:js
+Sender	pbmfc/Sender.h	/^		Sender()$/;"	f	class:pb::Sender
+Sender	pbmfc/Sender.h	/^		Sender(PB_CMD_TYPE cmd, const char* pData, uint32_t uSize)$/;"	f	class:pb::Sender
+Sender	pbmfc/Sender.h	/^		Sender(PB_CMD_TYPE cmd, const std::string& strData)$/;"	f	class:pb::Sender
+Sender	pbmfc/Sender.h	/^		Sender(const Sender& s)$/;"	f	class:pb::Sender
+Sender	pbmfc/Sender.h	/^	class Sender$/;"	c	namespace:pb
+SerializePB	pbmfc/Sender.h	/^		void SerializePB(PB_CMD_TYPE cmd, T& obj)$/;"	f	class:pb::Sender
+Size	jsmfc/Sender.h	/^		size_t Size() const$/;"	f	class:js::Sender
+Size	pbmfc/Sender.h	/^		size_t Size() const$/;"	f	class:pb::Sender
+TARGET	Makefile	/^TARGET   = libevwork.a$/;"	m
+TARGET	example/jsonsrv/Makefile	/^TARGET  = jsonsrv$/;"	m
+TARGET_R	Makefile	/^TARGET_R   = libevwork.ra$/;"	m
+TARGET_RECV	example/Makefile	/^TARGET_RECV   = testrecv$/;"	m
+TARGET_SEND	example/Makefile	/^TARGET_SEND   = testsend$/;"	m
+THandle	EVComm.h	/^		THandle(T* p) : m_pObj(p) {}$/;"	f	class:evwork::THandle
+THandle	EVComm.h	/^	class THandle$/;"	c	namespace:evwork
+TRequestQueue	jsmfc/AsyncDataHandler.h	/^	class TRequestQueue$/;"	c	namespace:js
+TRequestQueue	pbmfc/AsyncDataHandler.h	/^	class TRequestQueue$/;"	c	namespace:pb
+TargetFunc	jsmfc/FormDef.h	/^	typedef void (PHClass::*TargetFunc)();$/;"	t	namespace:js
+TargetFunc	pbmfc/FormDef.h	/^	typedef void (PHClass::*TargetFunc)();$/;"	t	namespace:pb
+TargetProc	jsmfc/FormDef.h	/^	union TargetProc$/;"	u	namespace:js
+TargetProc	pbmfc/FormDef.h	/^	union TargetProc$/;"	u	namespace:pb
+TimerHandler	TimerHandler.h	/^	TimerHandler()$/;"	f	class:TimerHandler
+TimerHandler	TimerHandler.h	/^	TimerHandler(T* x)$/;"	f	class:TimerHandler
+TimerHandler	TimerHandler.h	/^class TimerHandler$/;"	c
+VEC_PRHEADWRITER_t	AsyncWriter.h	/^		typedef std::vector<CThreadWriter*> VEC_PRHEADWRITER_t;$/;"	t	class:evwork::CAsyncWriter
+Warn	Logger.h	/^		Warn = 4,		\/\/ LOG_WARNING$/;"	e	enum:evwork::LogLevel
+__appendBuffer	ClientConn.cpp	/^void CClientConn::__appendBuffer(const char* pData, size_t uSize)$/;"	f	class:CClientConn
+__bind	ListenConn.cpp	/^void CListenConn::__bind()$/;"	f	class:CListenConn
+__calc_capacity	Buffer.h	/^		uint32_t __calc_capacity(uint32_t _size)$/;"	f	class:evwork::CBuffer
+__cbFlush	AsyncWriter.cpp	/^void CAsyncWriter::__cbFlush(int revents)$/;"	f	class:CAsyncWriter
+__cbTimer	TimerHandler.h	/^	static void __cbTimer(struct ev_loop *loop, struct ev_timer *w, int revents)$/;"	f	class:TimerHandler
+__cbTimerDestry	ClientConn.cpp	/^void CClientConn::__cbTimerDestry(struct ev_loop *loop, struct ev_timer *w, int revents)$/;"	f	class:CClientConn
+__cbTimerNoData	ClientConn.cpp	/^void CClientConn::__cbTimerNoData(struct ev_loop *loop, struct ev_timer *w, int revents)$/;"	f	class:CClientConn
+__create	ListenConn.cpp	/^void CListenConn::__create()$/;"	f	class:CListenConn
+__createThreadWorker	jsmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__createThreadWorker()$/;"	f	class:CAsyncDataHandler
+__createThreadWorker	pbmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__createThreadWorker()$/;"	f	class:CAsyncDataHandler
+__destroyThreadWorker	jsmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__destroyThreadWorker()$/;"	f	class:CAsyncDataHandler
+__destroyThreadWorker	pbmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__destroyThreadWorker()$/;"	f	class:CAsyncDataHandler
+__destroyTimerDestry	ClientConn.cpp	/^void CClientConn::__destroyTimerDestry()$/;"	f	class:CClientConn
+__destroyTimerNoData	ClientConn.cpp	/^void CClientConn::__destroyTimerNoData()$/;"	f	class:CClientConn
+__flushReal	AsyncWriter.cpp	/^void CAsyncWriter::__flushReal()$/;"	f	class:CAsyncWriter
+__getThreadWriter	AsyncWriter.cpp	/^CThreadWriter* CAsyncWriter::__getThreadWriter()$/;"	f	class:CAsyncWriter
+__initTimerDestry	ClientConn.cpp	/^void CClientConn::__initTimerDestry()$/;"	f	class:CClientConn
+__initTimerNoData	ClientConn.cpp	/^void CClientConn::__initTimerNoData()$/;"	f	class:CClientConn
+__listen	ListenConn.cpp	/^void CListenConn::__listen()$/;"	f	class:CListenConn
+__makeRequest	jsmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__makeRequest(const char *pPacket, uint32_t uPktLen, evwork::IConn* pConn)$/;"	f	class:CAsyncDataHandler
+__makeRequest	jsmfc/DataHandler.cpp	/^void CDataHandler::__makeRequest(const char *pPacket, uint32_t uPktLen, evwork::IConn* pConn)$/;"	f	class:CDataHandler
+__makeRequest	pbmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__makeRequest(const char *pPacket, uint32_t uPktLen, evwork::IConn* pConn)$/;"	f	class:CAsyncDataHandler
+__makeRequest	pbmfc/DataHandler.cpp	/^void CDataHandler::__makeRequest(const char *pPacket, uint32_t uPktLen, evwork::IConn* pConn)$/;"	f	class:CDataHandler
+__noblock	ClientConn.cpp	/^void CClientConn::__noblock()$/;"	f	class:CClientConn
+__noblock	ListenConn.cpp	/^void CListenConn::__noblock()$/;"	f	class:CListenConn
+__nodelay	ClientConn.cpp	/^void CClientConn::__nodelay()$/;"	f	class:CClientConn
+__notifyLEClose	ConnManager.cpp	/^void CConnManager::__notifyLEClose(IConn* pConn)$/;"	f	class:CConnManager
+__notifyLEConnected	ConnManager.cpp	/^void CConnManager::__notifyLEConnected(IConn* pConn)$/;"	f	class:CConnManager
+__onHandlerFlush	AsyncWriter.cpp	/^bool CAsyncWriter::__onHandlerFlush()$/;"	f	class:CAsyncWriter
+__onHandlerPrint	jsmfc/AsyncDataHandler.cpp	/^bool CAsyncDataHandler::__onHandlerPrint()$/;"	f	class:CAsyncDataHandler
+__onHandlerPrint	jsmfc/DataHandler.cpp	/^bool CDataHandler::__onHandlerPrint()$/;"	f	class:CDataHandler
+__onHandlerPrint	pbmfc/AsyncDataHandler.cpp	/^bool CAsyncDataHandler::__onHandlerPrint()$/;"	f	class:CAsyncDataHandler
+__onHandlerPrint	pbmfc/DataHandler.cpp	/^bool CDataHandler::__onHandlerPrint()$/;"	f	class:CDataHandler
+__onHandlerSender	example/jsonsrv/logic.cpp	/^bool CLogic::__onHandlerSender()$/;"	f	class:CLogic
+__onRead	AsyncWriter.cpp	/^void CAsyncWriter::__onRead()$/;"	f	class:CAsyncWriter
+__onRead	ClientConn.cpp	/^void CClientConn::__onRead()$/;"	f	class:CClientConn
+__onWrite	ClientConn.cpp	/^void CClientConn::__onWrite()$/;"	f	class:CClientConn
+__recvData	ClientConn.cpp	/^size_t CClientConn::__recvData(char* pData, size_t uSize)$/;"	f	class:CClientConn
+__requestDispatch	jsmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__requestDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CAsyncDataHandler
+__requestDispatch	jsmfc/DataHandler.cpp	/^void CDataHandler::__requestDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CDataHandler
+__requestDispatch	pbmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::__requestDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CAsyncDataHandler
+__requestDispatch	pbmfc/DataHandler.cpp	/^void CDataHandler::__requestDispatch(Request& request, evwork::IConn* pConn)$/;"	f	class:CDataHandler
+__reset	Buffer.h	/^		void __reset()$/;"	f	class:evwork::CBuffer
+__reuse	ListenConn.cpp	/^void CListenConn::__reuse()$/;"	f	class:CListenConn
+__sendBuffer	ClientConn.cpp	/^void CClientConn::__sendBuffer()$/;"	f	class:CClientConn
+__sendData	ClientConn.cpp	/^size_t CClientConn::__sendData(const char* pData, size_t uSize)$/;"	f	class:CClientConn
+__testFunc	example/testsend.cpp	/^	bool __testFunc()$/;"	f	class:CTest	file:
+__toIpPortKey	ConnManager.cpp	/^std::string CConnManager::__toIpPortKey(const std::string& strIp, uint16_t uPort)$/;"	f	class:CConnManager
+__try_decrement	Buffer.h	/^		void __try_decrement()$/;"	f	class:evwork::CBuffer
+__try_increment	Buffer.h	/^		void __try_increment(uint32_t _size)$/;"	f	class:evwork::CBuffer
+__updateTimerNoData	ClientConn.cpp	/^void CClientConn::__updateTimerNoData()$/;"	f	class:CClientConn
+__willFreeMyself	ClientConn.cpp	/^void CClientConn::__willFreeMyself(const std::string& strDesc)$/;"	f	class:CClientConn
+_x	TimerHandler.h	/^	T* _x;$/;"	m	class:TimerHandler
+addEntry	jsmfc/MfcAppContext.cpp	/^void CMfcAppContext::addEntry(FormEntry* pEntry, void* pTarget)$/;"	f	class:CMfcAppContext
+addEntry	pbmfc/MfcAppContext.cpp	/^void CMfcAppContext::addEntry(FormEntry* pEntry, void* pTarget)$/;"	f	class:CMfcAppContext
+addLE	ConnManager.cpp	/^void CConnManager::addLE(ILinkEvent* p)$/;"	f	class:CConnManager
+append	Buffer.h	/^		void append(const char* _data, uint32_t _size)$/;"	f	class:evwork::CBuffer
+bind_func	TimerHandler.h	/^struct bind_func$/;"	s
+breakLoop	EVLoop.cpp	/^void CEVLoop::breakLoop()$/;"	f	class:CEVLoop
+callback	TimerHandler.h	/^	typedef bool (T::*callback)();$/;"	t	struct:bind_func
+cbAccept	ListenConn.cpp	/^void CListenConn::cbAccept(int revents)$/;"	f	class:CListenConn
+cbEvent	ClientConn.cpp	/^void CClientConn::cbEvent(int revents)$/;"	f	class:CClientConn
+cbEvent	EVComm.h	/^		void cbEvent(int revents)$/;"	f	class:evwork::THandle
+data	Buffer.h	/^		const char* data() const$/;"	f	class:evwork::CBuffer
+delHandle	EVLoop.cpp	/^void CEVLoop::delHandle(IHandle* p)$/;"	f	class:CEVLoop
+delLE	ConnManager.cpp	/^void CConnManager::delLE(ILinkEvent* p)$/;"	f	class:CConnManager
+destroy	EVLoop.cpp	/^void CEVLoop::destroy()$/;"	f	class:CEVLoop
+destroyFrom	jsmfc/FormDef.h	/^		virtual void destroyFrom(Json::Value* p)$/;"	f	class:js::CFromHandle
+destroyFrom	pbmfc/FormDef.h	/^		virtual void destroyFrom(void* p)$/;"	f	class:pb::FormHandleT
+erase	Buffer.h	/^		void erase(uint32_t _size)$/;"	f	class:evwork::CBuffer
+evCallBack	EVComm.h	/^		static void evCallBack(struct ev_loop *loop, struct ev_io *w, int revents)$/;"	f	struct:evwork::IHandle
+evwork	AsyncWriter.h	/^namespace evwork$/;"	n
+evwork	Buffer.h	/^namespace evwork$/;"	n
+evwork	ClientConn.h	/^namespace evwork$/;"	n
+evwork	ConnManager.h	/^namespace evwork$/;"	n
+evwork	EVComm.h	/^namespace evwork$/;"	n
+evwork	EVWork.h	/^namespace evwork$/;"	n
+evwork	ExceptionErrno.h	/^namespace evwork$/;"	n
+evwork	FuncHelper.h	/^namespace evwork$/;"	n
+evwork	ListenConn.h	/^namespace evwork$/;"	n
+evwork	Logger.h	/^namespace evwork$/;"	n
+evwork	Writer.h	/^namespace evwork$/;"	n
+exception_errno	ExceptionErrno.h	/^		exception_errno(const std::string& __arg) { init(errno, __arg); }$/;"	f	class:evwork::exception_errno
+exception_errno	ExceptionErrno.h	/^		exception_errno(int e, const std::string& __arg) { init(e, __arg); }$/;"	f	class:evwork::exception_errno
+exception_errno	ExceptionErrno.h	/^	class exception_errno $/;"	c	namespace:evwork
+flush	AsyncWriter.cpp	/^void CAsyncWriter::flush()$/;"	f	class:CAsyncWriter
+flush	AsyncWriter.cpp	/^void CThreadWriter::flush()$/;"	f	class:CThreadWriter
+flush	Writer.h	/^		virtual void flush() {}$/;"	f	class:evwork::CWriter
+fpt_vc	jsmfc/FormDef.h	/^		fpt_vc,			\/\/ void ::(Json::Value*)$/;"	e	enum:js::FormProcType
+fpt_vc	pbmfc/FormDef.h	/^		fpt_vc,			\/\/ void ::(Cmd*)$/;"	e	enum:pb::FormProcType
+fpt_vcc	jsmfc/FormDef.h	/^		fpt_vcc,		\/\/ void ::(Json::Value*, Conn*)$/;"	e	enum:js::FormProcType
+fpt_vcc	pbmfc/FormDef.h	/^		fpt_vcc,		\/\/ void ::(Cmd *, Conn*)$/;"	e	enum:pb::FormProcType
+fpt_vv	jsmfc/FormDef.h	/^		fpt_vv,			\/\/ void ::()$/;"	e	enum:js::FormProcType
+fpt_vv	pbmfc/FormDef.h	/^		fpt_vv,			\/\/ void ::()$/;"	e	enum:pb::FormProcType
+freesize	Buffer.h	/^		uint32_t freesize()$/;"	f	class:evwork::CBuffer
+getAppContext	jsmfc/FormDef.h	/^		IAppContext* getAppContext() { return m_pAppContext; }$/;"	f	class:js::IAppContextAware
+getAppContext	pbmfc/FormDef.h	/^		IAppContext* getAppContext() { return m_pAppContext; }$/;"	f	class:pb::IAppContextAware
+getCmd	jsmfc/Request.h	/^		JS_CMD_TYPE getCmd() const$/;"	f	class:js::Header
+getCmd	pbmfc/Request.h	/^		PB_CMD_TYPE getCmd() const$/;"	f	class:pb::Header
+getConnById	ConnManager.cpp	/^IConn* CConnManager::getConnById(uint32_t uConnId)$/;"	f	class:CConnManager
+getConnByIpPort	ConnManager.cpp	/^IConn* CConnManager::getConnByIpPort(const std::string& strIp, uint16_t uPort)$/;"	f	class:CConnManager
+getConnManager	EVWork.cpp	/^IConnManager* CThreadEnv::getConnManager()$/;"	f	class:CThreadEnv
+getDataEvent	EVWork.cpp	/^IDataEvent* CThreadEnv::getDataEvent()$/;"	f	class:CThreadEnv
+getEVLoop	EVWork.cpp	/^CEVLoop* CThreadEnv::getEVLoop()$/;"	f	class:CThreadEnv
+getEVParam	EVWork.cpp	/^SEVParam& CThreadEnv::getEVParam()$/;"	f	class:CThreadEnv
+getEv	EVComm.h	/^		int getEv() { return m_ev; }$/;"	f	struct:evwork::IHandle
+getEvIo	EVComm.h	/^		ev_io& getEvIo() { return m_evio; }$/;"	f	struct:evwork::IHandle
+getEvLoop	EVLoop.cpp	/^struct ev_loop* CEVLoop::getEvLoop()$/;"	f	class:CEVLoop
+getFd	EVComm.h	/^		int getFd() { return m_fd; }$/;"	f	struct:evwork::IHandle
+getLen	jsmfc/Request.h	/^		uint32_t getLen() const$/;"	f	class:js::Header
+getLen	pbmfc/Request.h	/^		uint32_t getLen() const$/;"	f	class:pb::Header
+getLinkEvent	EVWork.cpp	/^ILinkEvent* CThreadEnv::getLinkEvent()$/;"	f	class:CThreadEnv
+getLogReport	Logger.h	/^		ILogReport* getLogReport() { return m_pLogReport; }$/;"	f	class:evwork::ILogReportAware
+getLogger	EVWork.cpp	/^ILogReport* CThreadEnv::getLogger()$/;"	f	class:CThreadEnv
+getPeerInfo	ClientConn.cpp	/^void CClientConn::getPeerInfo(std::string& strPeerIp, uint16_t& uPeerPort16)$/;"	f	class:CClientConn
+getThreadEnv	EVWork.cpp	/^CThreadEnv* CEnv::getThreadEnv()$/;"	f	class:CEnv
+getWriter	EVWork.cpp	/^IWriter* CThreadEnv::getWriter()$/;"	f	class:CThreadEnv
+getcid	EVComm.h	/^		uint32_t getcid() { return m_cid; }$/;"	f	struct:evwork::IConn
+handlePacket	jsmfc/FormDef.h	/^		virtual Json::Value* handlePacket(Request& req)$/;"	f	class:js::CFromHandle
+handlePacket	pbmfc/FormDef.h	/^		virtual void* handlePacket(const char* pData, uint32_t uSize)$/;"	f	class:pb::FormHandleT
+inc_capacity	Buffer.h	/^		void inc_capacity(uint32_t _size)$/;"	f	class:evwork::CBuffer
+inc_size	Buffer.h	/^		void inc_size(uint32_t _size)$/;"	f	class:evwork::CBuffer
+init	EVLoop.cpp	/^bool CEVLoop::init()$/;"	f	class:CEVLoop
+init	ExceptionErrno.h	/^		void init(int e, const std::string & arg)$/;"	f	class:evwork::exception_errno
+init	TimerHandler.h	/^	void init(T* x)$/;"	f	class:TimerHandler
+js	jsmfc/AsyncDataHandler.h	/^namespace js$/;"	n
+js	jsmfc/DataHandler.h	/^namespace js$/;"	n
+js	jsmfc/FormDef.h	/^namespace js$/;"	n
+js	jsmfc/MfcAppContext.h	/^namespace js$/;"	n
+js	jsmfc/Request.h	/^namespace js$/;"	n
+js	jsmfc/Sender.h	/^namespace js$/;"	n
+log	Logger.h	/^		virtual void log(int iLevel, const char* szFormat, ...)$/;"	f	class:evwork::CSyslogReport
+m_Input	ClientConn.h	/^		CBuffer m_Input;$/;"	m	class:evwork::CClientConn
+m_Output	ClientConn.h	/^		CBuffer m_Output;$/;"	m	class:evwork::CClientConn
+m_bConnected	ClientConn.h	/^		bool m_bConnected;$/;"	m	class:evwork::CClientConn
+m_bCopy	jsmfc/Request.h	/^		bool m_bCopy;$/;"	m	class:js::Request
+m_bCopy	pbmfc/Request.h	/^		bool m_bCopy;$/;"	m	class:pb::Request
+m_bFlushing	AsyncWriter.h	/^		bool m_bFlushing;$/;"	m	class:evwork::CAsyncWriter
+m_bStart	TimerHandler.h	/^	bool m_bStart;$/;"	m	class:TimerHandler
+m_bTimerDestroyStart	ClientConn.h	/^		bool m_bTimerDestroyStart;$/;"	m	class:evwork::CClientConn
+m_bTimerNoDataStart	ClientConn.h	/^		bool m_bTimerNoDataStart;$/;"	m	class:evwork::CClientConn
+m_buffer	jsmfc/Sender.h	/^		evwork::CBuffer m_buffer;$/;"	m	class:js::Sender
+m_buffer	pbmfc/Sender.h	/^		evwork::CBuffer m_buffer;$/;"	m	class:pb::Sender
+m_capacity	Buffer.h	/^		uint32_t m_capacity;$/;"	m	class:evwork::CBuffer
+m_cid	EVComm.h	/^		uint32_t m_cid;$/;"	m	struct:evwork::IConn
+m_cond	jsmfc/AsyncDataHandler.h	/^		boost::condition m_cond;$/;"	m	class:js::TRequestQueue
+m_cond	pbmfc/AsyncDataHandler.h	/^		boost::condition m_cond;$/;"	m	class:pb::TRequestQueue
+m_data	Buffer.h	/^		char* m_data;$/;"	m	class:evwork::CBuffer
+m_errno	ExceptionErrno.h	/^		int m_errno;$/;"	m	class:evwork::exception_errno
+m_ev	EVComm.h	/^		int m_ev;$/;"	m	struct:evwork::IHandle
+m_evParam	EVWork.h	/^		SEVParam m_evParam;$/;"	m	class:evwork::CThreadEnv
+m_evTimer	TimerHandler.h	/^	ev_timer m_evTimer;$/;"	m	class:TimerHandler
+m_evTimerDestroy	ClientConn.h	/^		ev_timer m_evTimerDestroy;$/;"	m	class:evwork::CClientConn
+m_evTimerNoData	ClientConn.h	/^		ev_timer m_evTimerNoData;$/;"	m	class:evwork::CClientConn
+m_evio	EVComm.h	/^		ev_io m_evio;$/;"	m	struct:evwork::IHandle
+m_fd	EVComm.h	/^		int m_fd;$/;"	m	struct:evwork::IConn
+m_fd	EVComm.h	/^		int m_fd;$/;"	m	struct:evwork::IHandle
+m_fd	ListenConn.h	/^		int m_fd;$/;"	m	class:evwork::CListenConn
+m_fdFlush	AsyncWriter.h	/^		int m_fdFlush;$/;"	m	class:evwork::CAsyncWriter
+m_hAccept	ListenConn.h	/^		THandle<CListenConn, &CListenConn::cbAccept> m_hAccept;$/;"	m	class:evwork::CListenConn
+m_hFlush	AsyncWriter.h	/^		THandle<CAsyncWriter, &CAsyncWriter::__cbFlush> m_hFlush;$/;"	m	class:evwork::CAsyncWriter
+m_hRead	ClientConn.h	/^		THandle<CClientConn, &CClientConn::cbEvent> m_hRead;$/;"	m	class:evwork::CClientConn
+m_hWrite	ClientConn.h	/^		THandle<CClientConn, &CClientConn::cbEvent> m_hWrite;$/;"	m	class:evwork::CClientConn
+m_head_off	Buffer.h	/^		uint32_t m_head_off;$/;"	m	class:evwork::CBuffer
+m_listV	jsmfc/AsyncDataHandler.h	/^		std::list<value_type> m_listV;$/;"	m	class:js::TRequestQueue
+m_listV	pbmfc/AsyncDataHandler.h	/^		std::list<value_type> m_listV;$/;"	m	class:pb::TRequestQueue
+m_lock	AsyncWriter.h	/^		boost::mutex m_lock;$/;"	m	class:evwork::CThreadWriter
+m_lockVecWriter	AsyncWriter.h	/^		boost::mutex m_lockVecWriter;$/;"	m	class:evwork::CAsyncWriter
+m_mapCIdConn	ConnManager.h	/^		std::map<uint32_t, IConn*> m_mapCIdConn;$/;"	m	class:evwork::CConnManager
+m_mapEntry	jsmfc/MfcAppContext.h	/^		ENTRY_MAP_t m_mapEntry;$/;"	m	class:js::CMfcAppContext
+m_mapEntry	pbmfc/MfcAppContext.h	/^		ENTRY_MAP_t m_mapEntry;$/;"	m	class:pb::CMfcAppContext
+m_mapIpPortConn	ConnManager.h	/^		std::map<std::string, IConn*> m_mapIpPortConn;$/;"	m	class:evwork::CConnManager
+m_mutex	jsmfc/AsyncDataHandler.h	/^		boost::mutex m_mutex;$/;"	m	class:js::TRequestQueue
+m_mutex	pbmfc/AsyncDataHandler.h	/^		boost::mutex m_mutex;$/;"	m	class:pb::TRequestQueue
+m_pAppContext	jsmfc/FormDef.h	/^		IAppContext* m_pAppContext;$/;"	m	class:js::IAppContextAware
+m_pAppContext	pbmfc/FormDef.h	/^		IAppContext* m_pAppContext;$/;"	m	class:pb::IAppContextAware
+m_pConnManager	EVWork.h	/^		IConnManager* m_pConnManager;$/;"	m	class:evwork::CThreadEnv
+m_pDE_Special	ClientConn.h	/^		IDataEvent* m_pDE_Special;$/;"	m	class:evwork::CClientConn
+m_pDE_Special	ListenConn.h	/^		IDataEvent* m_pDE_Special;$/;"	m	class:evwork::CListenConn
+m_pData	jsmfc/Request.h	/^		char* m_pData;$/;"	m	class:js::Request
+m_pData	pbmfc/Request.h	/^		char* m_pData;$/;"	m	class:pb::Request
+m_pDataEvent	EVWork.h	/^		IDataEvent* m_pDataEvent;$/;"	m	class:evwork::CThreadEnv
+m_pEVLoop	EVComm.h	/^		struct ev_loop* m_pEVLoop;$/;"	m	class:evwork::CEVLoop	typeref:struct:evwork::CEVLoop::ev_loop
+m_pEVLoop	EVWork.h	/^		CEVLoop* m_pEVLoop;$/;"	m	class:evwork::CThreadEnv
+m_pFormHandle	pbmfc/FormDef.h	/^		std::auto_ptr<IFromHandle> m_pFormHandle;$/;"	m	struct:pb::FormEntry
+m_pFunc	jsmfc/FormDef.h	/^		TargetFunc m_pFunc;$/;"	m	struct:js::FormEntry
+m_pFunc	pbmfc/FormDef.h	/^		TargetFunc m_pFunc;$/;"	m	struct:pb::FormEntry
+m_pLinkEvent	EVWork.h	/^		ILinkEvent* m_pLinkEvent;$/;"	m	class:evwork::CThreadEnv
+m_pLogReport	Logger.h	/^		ILogReport* m_pLogReport;$/;"	m	class:evwork::ILogReportAware
+m_pLogger	EVWork.h	/^		ILogReport* m_pLogger;$/;"	m	class:evwork::CThreadEnv
+m_pObj	EVComm.h	/^		T* m_pObj;$/;"	m	class:evwork::THandle
+m_pObj	jsmfc/FormDef.h	/^		PHClass* m_pObj;$/;"	m	struct:js::FormEntry
+m_pObj	pbmfc/FormDef.h	/^		PHClass* m_pObj;$/;"	m	struct:pb::FormEntry
+m_pParent	jsmfc/AsyncDataHandler.h	/^		CAsyncDataHandler* m_pParent;$/;"	m	class:js::CThreadWorker
+m_pParent	pbmfc/AsyncDataHandler.h	/^		CAsyncDataHandler* m_pParent;$/;"	m	class:pb::CThreadWorker
+m_pWriter	EVWork.h	/^		IWriter* m_pWriter;$/;"	m	class:evwork::CThreadEnv
+m_requestQueue	jsmfc/AsyncDataHandler.h	/^		TRequestQueue<SRequestWrap> m_requestQueue;$/;"	m	class:js::CAsyncDataHandler
+m_requestQueue	pbmfc/AsyncDataHandler.h	/^		TRequestQueue<SRequestWrap> m_requestQueue;$/;"	m	class:pb::CAsyncDataHandler
+m_setHandle	EVComm.h	/^		std::set<IHandle*> m_setHandle;$/;"	m	class:evwork::CEVLoop
+m_setLE	ConnManager.h	/^		std::set<ILinkEvent*> m_setLE;$/;"	m	class:evwork::CConnManager
+m_strBindIp	ListenConn.h	/^		std::string m_strBindIp;$/;"	m	class:evwork::CListenConn
+m_strPeerIp	ClientConn.h	/^		std::string m_strPeerIp;$/;"	m	class:evwork::CClientConn
+m_tail_off	Buffer.h	/^		uint32_t m_tail_off;$/;"	m	class:evwork::CBuffer
+m_thread	jsmfc/AsyncDataHandler.h	/^		boost::thread m_thread;$/;"	m	class:js::CThreadWorker
+m_thread	pbmfc/AsyncDataHandler.h	/^		boost::thread m_thread;$/;"	m	class:pb::CThreadWorker
+m_timerFlush	AsyncWriter.h	/^		TimerHandler<CAsyncWriter, &CAsyncWriter::__onHandlerFlush> m_timerFlush;$/;"	m	class:evwork::CAsyncWriter
+m_timerPrint	jsmfc/DataHandler.h	/^		TimerHandler<CDataHandler, &CDataHandler::__onHandlerPrint> m_timerPrint;$/;"	m	class:js::CDataHandler
+m_timerPrint	pbmfc/DataHandler.h	/^		TimerHandler<CDataHandler, &CDataHandler::__onHandlerPrint> m_timerPrint;$/;"	m	class:pb::CDataHandler
+m_timerSender	example/jsonsrv/logic.h	/^	TimerHandler<CLogic, &CLogic::__onHandlerSender> m_timerSender;$/;"	m	class:CLogic
+m_timerTest	example/testsend.cpp	/^	TimerHandler<CTest, &CTest::__testFunc> m_timerTest;$/;"	m	class:CTest	file:
+m_tssEnv	EVWork.h	/^		static boost::thread_specific_ptr<CThreadEnv> m_tssEnv;$/;"	m	class:evwork::CEnv
+m_tssThreadWriter	AsyncWriter.h	/^		boost::thread_specific_ptr<CThreadWriter> m_tssThreadWriter;$/;"	m	class:evwork::CAsyncWriter
+m_uBytes64	jsmfc/DataHandler.h	/^		uint64_t m_uBytes64;$/;"	m	class:js::CDataHandler
+m_uBytes64	pbmfc/DataHandler.h	/^		uint64_t m_uBytes64;$/;"	m	class:pb::CDataHandler
+m_uCmd	jsmfc/FormDef.h	/^		uint32_t m_uCmd;$/;"	m	struct:js::FormEntry
+m_uCmd	jsmfc/Request.h	/^		JS_CMD_TYPE m_uCmd;$/;"	m	class:js::Header
+m_uCmd	pbmfc/FormDef.h	/^		uint32_t m_uCmd;$/;"	m	struct:pb::FormEntry
+m_uCmd	pbmfc/Request.h	/^		PB_CMD_TYPE m_uCmd;$/;"	m	class:pb::Header
+m_uLastConnId	ConnManager.h	/^		uint32_t m_uLastConnId;$/;"	m	class:evwork::CConnManager
+m_uLen	jsmfc/Request.h	/^		uint32_t m_uLen;$/;"	m	class:js::Header
+m_uLen	pbmfc/Request.h	/^		uint32_t m_uLen;$/;"	m	class:pb::Header
+m_uListenPort	ListenConn.h	/^		uint16_t m_uListenPort;$/;"	m	class:evwork::CListenConn
+m_uPacketLimit	jsmfc/DataHandler.h	/^		uint32_t m_uPacketLimit;$/;"	m	class:js::CDataHandler
+m_uPacketLimit	pbmfc/DataHandler.h	/^		uint32_t m_uPacketLimit;$/;"	m	class:pb::CDataHandler
+m_uPeerPort16	ClientConn.h	/^		uint16_t m_uPeerPort16;$/;"	m	class:evwork::CClientConn
+m_uProc	jsmfc/DataHandler.h	/^		uint32_t m_uProc;$/;"	m	class:js::CDataHandler
+m_uProc	pbmfc/DataHandler.h	/^		uint32_t m_uProc;$/;"	m	class:pb::CDataHandler
+m_uSize	jsmfc/Request.h	/^		uint32_t m_uSize;$/;"	m	class:js::Request
+m_uSize	pbmfc/Request.h	/^		uint32_t m_uSize;$/;"	m	class:pb::Request
+m_uType	jsmfc/FormDef.h	/^		uint32_t m_uType;$/;"	m	struct:js::FormEntry
+m_uType	pbmfc/FormDef.h	/^		uint32_t m_uType;$/;"	m	struct:pb::FormEntry
+m_uWorkerCount	jsmfc/AsyncDataHandler.h	/^		uint32_t m_uWorkerCount;$/;"	m	class:js::CAsyncDataHandler
+m_uWorkerCount	pbmfc/AsyncDataHandler.h	/^		uint32_t m_uWorkerCount;$/;"	m	class:pb::CAsyncDataHandler
+m_vecPacket	AsyncWriter.h	/^		std::vector<SPacket*> m_vecPacket;$/;"	m	class:evwork::CThreadWriter
+m_vecWorker	jsmfc/AsyncDataHandler.h	/^		std::vector<CThreadWorker*> m_vecWorker;$/;"	m	class:js::CAsyncDataHandler
+m_vecWorker	pbmfc/AsyncDataHandler.h	/^		std::vector<CThreadWorker*> m_vecWorker;$/;"	m	class:pb::CAsyncDataHandler
+m_vecpThreadWriter	AsyncWriter.h	/^		VEC_PRHEADWRITER_t m_vecpThreadWriter;$/;"	m	class:evwork::CAsyncWriter
+m_what	ExceptionErrno.h	/^		std::string m_what;$/;"	m	class:evwork::exception_errno
+main	example/jsonsrv/main.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	example/testrecv.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	example/testsend.cpp	/^int main(int argc, char* argv[])$/;"	f
+mf_oo	jsmfc/FormDef.h	/^		TargetFunc mf_oo;$/;"	m	union:js::TargetProc
+mf_oo	pbmfc/FormDef.h	/^		TargetFunc mf_oo;$/;"	m	union:pb::TargetProc
+mf_vc	jsmfc/FormDef.h	/^		void (PHClass::*mf_vc)(Json::Value*);$/;"	m	union:js::TargetProc
+mf_vc	pbmfc/FormDef.h	/^		void (PHClass::*mf_vc)(void*);$/;"	m	union:pb::TargetProc
+mf_vcc	jsmfc/FormDef.h	/^		void (PHClass::*mf_vcc)(Json::Value*, evwork::IConn*);$/;"	m	union:js::TargetProc
+mf_vcc	pbmfc/FormDef.h	/^		void (PHClass::*mf_vcc)(void*, evwork::IConn*);$/;"	m	union:pb::TargetProc
+mf_vv	jsmfc/FormDef.h	/^		void (PHClass::*mf_vv)();$/;"	m	union:js::TargetProc
+mf_vv	pbmfc/FormDef.h	/^		void (PHClass::*mf_vv)();$/;"	m	union:pb::TargetProc
+onClose	ConnManager.cpp	/^void CConnManager::onClose(IConn* pConn)$/;"	f	class:CConnManager
+onClose	example/jsonsrv/logic.cpp	/^void CLogic::onClose(evwork::IConn* pConn)$/;"	f	class:CLogic
+onConnected	ConnManager.cpp	/^void CConnManager::onConnected(IConn* pConn)$/;"	f	class:CConnManager
+onConnected	example/jsonsrv/logic.cpp	/^void CLogic::onConnected(evwork::IConn* pConn)$/;"	f	class:CLogic
+onData	example/testrecv.cpp	/^	virtual int onData(IConn* pConn, const char* pData, size_t uSize)$/;"	f	class:CDataEvent
+onData	jsmfc/DataHandler.cpp	/^int CDataHandler::onData(evwork::IConn* pConn, const char* pData, size_t uSize)$/;"	f	class:CDataHandler
+onData	pbmfc/DataHandler.cpp	/^int CDataHandler::onData(evwork::IConn* pConn, const char* pData, size_t uSize)$/;"	f	class:CDataHandler
+onMessage1	example/jsonsrv/logic.cpp	/^void CLogic::onMessage1(Json::Value* pJson, evwork::IConn* pConn)$/;"	f	class:CLogic
+onTimer	TimerHandler.h	/^	void onTimer()$/;"	f	class:TimerHandler
+operator =	Buffer.h	/^		CBuffer & operator = (const CBuffer& _obj)$/;"	f	class:evwork::CBuffer
+pConn	jsmfc/AsyncDataHandler.h	/^		evwork::IConn* pConn;$/;"	m	struct:js::SRequestWrap
+pConn	pbmfc/AsyncDataHandler.h	/^		evwork::IConn* pConn;$/;"	m	struct:pb::SRequestWrap
+pRequest	jsmfc/AsyncDataHandler.h	/^		Request* pRequest;$/;"	m	struct:js::SRequestWrap
+pRequest	pbmfc/AsyncDataHandler.h	/^		Request* pRequest;$/;"	m	struct:pb::SRequestWrap
+parseHeader	jsmfc/Request.h	/^		void parseHeader()$/;"	f	class:js::Request
+parseHeader	pbmfc/Request.h	/^		void parseHeader()$/;"	f	class:pb::Request
+pb	pbmfc/AsyncDataHandler.h	/^namespace pb$/;"	n
+pb	pbmfc/DataHandler.h	/^namespace pb$/;"	n
+pb	pbmfc/FormDef.h	/^namespace pb$/;"	n
+pb	pbmfc/MfcAppContext.h	/^namespace pb$/;"	n
+pb	pbmfc/Request.h	/^namespace pb$/;"	n
+pb	pbmfc/Sender.h	/^namespace pb$/;"	n
+peekLen	jsmfc/Request.h	/^		static uint32_t peekLen(const void * d)$/;"	f	class:js::Request
+peekLen	pbmfc/Request.h	/^		static uint32_t peekLen(const void * d)$/;"	f	class:pb::Request
+pop	jsmfc/AsyncDataHandler.h	/^		value_type pop()$/;"	f	class:js::TRequestQueue
+pop	pbmfc/AsyncDataHandler.h	/^		value_type pop()$/;"	f	class:pb::TRequestQueue
+push	jsmfc/AsyncDataHandler.h	/^		void push(const value_type& v)$/;"	f	class:js::TRequestQueue
+push	pbmfc/AsyncDataHandler.h	/^		void push(const value_type& v)$/;"	f	class:pb::TRequestQueue
+random	FuncHelper.h	/^	inline int random(int nBase, int nMax, int nFactor = 0)$/;"	f	namespace:evwork
+reset	Buffer.h	/^		void reset()$/;"	f	class:evwork::CBuffer
+reset	jsmfc/AsyncDataHandler.h	/^		void reset(Request* _pRequest, evwork::IConn* _pConn)$/;"	f	struct:js::SRequestWrap
+reset	pbmfc/AsyncDataHandler.h	/^		void reset(Request* _pRequest, evwork::IConn* _pConn)$/;"	f	struct:pb::SRequestWrap
+runLoop	EVLoop.cpp	/^void CEVLoop::runLoop()$/;"	f	class:CEVLoop
+runLoop	jsmfc/AsyncDataHandler.cpp	/^void CThreadWorker::runLoop()$/;"	f	class:CThreadWorker
+runLoop	pbmfc/AsyncDataHandler.cpp	/^void CThreadWorker::runLoop()$/;"	f	class:CThreadWorker
+send	AsyncWriter.cpp	/^void CAsyncWriter::send(const std::string& strIp, uint16_t uPort, const char* pData, size_t uSize)$/;"	f	class:CAsyncWriter
+send	AsyncWriter.cpp	/^void CThreadWriter::send(const std::string& strIp, uint16_t uPort, const char* pData, size_t uSize)$/;"	f	class:CThreadWriter
+send	Writer.cpp	/^void CWriter::send(const std::string& strIp, uint16_t uPort, const char* pData, size_t uSize)$/;"	f	class:CWriter
+sendBin	ClientConn.cpp	/^bool CClientConn::sendBin(const char* pData, size_t uSize)$/;"	f	class:CClientConn
+setAppContext	jsmfc/FormDef.h	/^		void setAppContext(IAppContext* pAppContext) { m_pAppContext = pAppContext; }$/;"	f	class:js::IAppContextAware
+setAppContext	pbmfc/FormDef.h	/^		void setAppContext(IAppContext* pAppContext) { m_pAppContext = pAppContext; }$/;"	f	class:pb::IAppContextAware
+setCmd	jsmfc/Request.h	/^		void setCmd(JS_CMD_TYPE uCmd)$/;"	f	class:js::Header
+setCmd	pbmfc/Request.h	/^		void setCmd(PB_CMD_TYPE uCmd)$/;"	f	class:pb::Header
+setConnManager	EVWork.cpp	/^void CThreadEnv::setConnManager(IConnManager* p)$/;"	f	class:CThreadEnv
+setDataEvent	EVWork.cpp	/^void CThreadEnv::setDataEvent(IDataEvent* p)$/;"	f	class:CThreadEnv
+setEVLoop	EVWork.cpp	/^void CThreadEnv::setEVLoop(CEVLoop* p)$/;"	f	class:CThreadEnv
+setEv	EVComm.h	/^		void setEv(int ev) { m_ev = ev; }$/;"	f	struct:evwork::IHandle
+setFd	EVComm.h	/^		void setFd(int fd) { m_fd = fd; }$/;"	f	struct:evwork::IHandle
+setHandle	EVLoop.cpp	/^void CEVLoop::setHandle(IHandle* p)$/;"	f	class:CEVLoop
+setLen	jsmfc/Request.h	/^		void setLen(uint32_t uLen)$/;"	f	class:js::Header
+setLen	pbmfc/Request.h	/^		void setLen(uint32_t uLen)$/;"	f	class:pb::Header
+setLinkEvent	EVWork.cpp	/^void CThreadEnv::setLinkEvent(ILinkEvent* p)$/;"	f	class:CThreadEnv
+setLogReport	Logger.h	/^		void setLogReport(ILogReport* p) { m_pLogReport = p; }$/;"	f	class:evwork::ILogReportAware
+setLogger	EVWork.cpp	/^void CThreadEnv::setLogger(ILogReport* p)$/;"	f	class:CThreadEnv
+setPacketLimit	jsmfc/DataHandler.cpp	/^void CDataHandler::setPacketLimit(uint32_t uLimit)$/;"	f	class:CDataHandler
+setPacketLimit	pbmfc/DataHandler.cpp	/^void CDataHandler::setPacketLimit(uint32_t uLimit)$/;"	f	class:CDataHandler
+setRLimitCore	FuncHelper.h	/^	inline void setRLimitCore(uint32_t uLimit)$/;"	f	namespace:evwork
+setSpecialDE	ClientConn.cpp	/^void CClientConn::setSpecialDE(IDataEvent* pDE)$/;"	f	class:CClientConn
+setSpecialDE	ListenConn.cpp	/^void CListenConn::setSpecialDE(IDataEvent* pDE)$/;"	f	class:CListenConn
+setWorkerCount	jsmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::setWorkerCount(uint32_t uCount)$/;"	f	class:CAsyncDataHandler
+setWorkerCount	pbmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::setWorkerCount(uint32_t uCount)$/;"	f	class:CAsyncDataHandler
+setWorking	jsmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::setWorking()$/;"	f	class:CAsyncDataHandler
+setWorking	pbmfc/AsyncDataHandler.cpp	/^void CAsyncDataHandler::setWorking()$/;"	f	class:CAsyncDataHandler
+setWriter	EVWork.cpp	/^void CThreadEnv::setWriter(IWriter* p)$/;"	f	class:CThreadEnv
+setcid	EVComm.h	/^		void setcid(uint32_t cid) { m_cid = cid; }$/;"	f	struct:evwork::IConn
+size	Buffer.h	/^		uint32_t size() const$/;"	f	class:evwork::CBuffer
+size	jsmfc/AsyncDataHandler.h	/^		size_t size()$/;"	f	class:js::TRequestQueue
+size	pbmfc/AsyncDataHandler.h	/^		size_t size()$/;"	f	class:pb::TRequestQueue
+start	TimerHandler.h	/^	void start(uint32_t timeout)$/;"	f	class:TimerHandler
+stop	TimerHandler.h	/^	void stop()$/;"	f	class:TimerHandler
+strIp	AsyncWriter.h	/^		std::string strIp;$/;"	m	struct:evwork::SPacket
+strPacket	AsyncWriter.h	/^		std::string strPacket;$/;"	m	struct:evwork::SPacket
+tail	Buffer.h	/^		char* tail()$/;"	f	class:evwork::CBuffer
+toString	FuncHelper.h	/^	inline std::string toString(const char* szFormat, ...)$/;"	f	namespace:evwork
+uConnTimeout	EVWork.h	/^		uint32_t uConnTimeout;$/;"	m	struct:evwork::SEVParam
+uPort	AsyncWriter.h	/^		uint16_t uPort;$/;"	m	struct:evwork::SPacket
+value_type	jsmfc/AsyncDataHandler.h	/^		typedef T value_type;$/;"	t	class:js::TRequestQueue
+value_type	pbmfc/AsyncDataHandler.h	/^		typedef T value_type;$/;"	t	class:pb::TRequestQueue
+what	ExceptionErrno.h	/^		virtual const char* what() const throw() { return m_what.c_str(); }$/;"	f	class:evwork::exception_errno
+what_errno	ExceptionErrno.h	/^		int what_errno() const throw() { return m_errno; }$/;"	f	class:evwork::exception_errno
+what_str	ExceptionErrno.h	/^		const std::string & what_str() const throw() { return m_what; }$/;"	f	class:evwork::exception_errno
+~CAsyncDataHandler	jsmfc/AsyncDataHandler.cpp	/^CAsyncDataHandler::~CAsyncDataHandler()$/;"	f	class:CAsyncDataHandler
+~CAsyncDataHandler	pbmfc/AsyncDataHandler.cpp	/^CAsyncDataHandler::~CAsyncDataHandler()$/;"	f	class:CAsyncDataHandler
+~CAsyncWriter	AsyncWriter.cpp	/^CAsyncWriter::~CAsyncWriter()$/;"	f	class:CAsyncWriter
+~CBuffer	Buffer.h	/^		~CBuffer()$/;"	f	class:evwork::CBuffer
+~CClientConn	ClientConn.cpp	/^CClientConn::~CClientConn()$/;"	f	class:CClientConn
+~CConnManager	ConnManager.cpp	/^CConnManager::~CConnManager()$/;"	f	class:CConnManager
+~CDataHandler	jsmfc/DataHandler.cpp	/^CDataHandler::~CDataHandler()$/;"	f	class:CDataHandler
+~CDataHandler	pbmfc/DataHandler.cpp	/^CDataHandler::~CDataHandler()$/;"	f	class:CDataHandler
+~CEVLoop	EVLoop.cpp	/^CEVLoop::~CEVLoop()$/;"	f	class:CEVLoop
+~CFromHandle	jsmfc/FormDef.h	/^		virtual ~CFromHandle() {}$/;"	f	class:js::CFromHandle
+~CListenConn	ListenConn.cpp	/^CListenConn::~CListenConn()$/;"	f	class:CListenConn
+~CLogic	example/jsonsrv/logic.cpp	/^CLogic::~CLogic()$/;"	f	class:CLogic
+~CMfcAppContext	jsmfc/MfcAppContext.cpp	/^CMfcAppContext::~CMfcAppContext()$/;"	f	class:CMfcAppContext
+~CMfcAppContext	pbmfc/MfcAppContext.cpp	/^CMfcAppContext::~CMfcAppContext()$/;"	f	class:CMfcAppContext
+~CSyslogReport	Logger.h	/^		virtual ~CSyslogReport()$/;"	f	class:evwork::CSyslogReport
+~CTest	example/testsend.cpp	/^	~CTest()$/;"	f	class:CTest
+~CThreadEnv	EVWork.cpp	/^CThreadEnv::~CThreadEnv()$/;"	f	class:CThreadEnv
+~CThreadWorker	jsmfc/AsyncDataHandler.cpp	/^CThreadWorker::~CThreadWorker()$/;"	f	class:CThreadWorker
+~CThreadWorker	pbmfc/AsyncDataHandler.cpp	/^CThreadWorker::~CThreadWorker()$/;"	f	class:CThreadWorker
+~CWriter	Writer.cpp	/^CWriter::~CWriter()$/;"	f	class:CWriter
+~IAppContext	jsmfc/FormDef.h	/^		virtual ~IAppContext() {};$/;"	f	class:js::IAppContext
+~IAppContext	pbmfc/FormDef.h	/^		virtual ~IAppContext() {};$/;"	f	class:pb::IAppContext
+~IAppContextAware	jsmfc/FormDef.h	/^		virtual ~IAppContextAware() {}$/;"	f	class:js::IAppContextAware
+~IAppContextAware	pbmfc/FormDef.h	/^		virtual ~IAppContextAware() {}$/;"	f	class:pb::IAppContextAware
+~IConn	EVComm.h	/^		virtual ~IConn() {}$/;"	f	struct:evwork::IConn
+~IConnManager	EVComm.h	/^		virtual ~IConnManager() {}$/;"	f	struct:evwork::IConnManager
+~IDataEvent	EVComm.h	/^		virtual ~IDataEvent() {}$/;"	f	struct:evwork::IDataEvent
+~IFromHandle	pbmfc/FormDef.h	/^		virtual ~IFromHandle() {}$/;"	f	class:pb::IFromHandle
+~IHandle	EVComm.h	/^		virtual ~IHandle() {}$/;"	f	struct:evwork::IHandle
+~ILinkEvent	EVComm.h	/^		virtual ~ILinkEvent() {}$/;"	f	struct:evwork::ILinkEvent
+~ILogReport	Logger.h	/^		virtual ~ILogReport() {}$/;"	f	class:evwork::ILogReport
+~ILogReportAware	Logger.h	/^		virtual ~ILogReportAware() {}$/;"	f	class:evwork::ILogReportAware
+~IWriter	EVComm.h	/^		virtual ~IWriter() {}$/;"	f	struct:evwork::IWriter
+~Request	jsmfc/Request.h	/^		~Request()$/;"	f	class:js::Request
+~Request	pbmfc/Request.h	/^		~Request()$/;"	f	class:pb::Request
+~THandle	EVComm.h	/^		virtual ~THandle() {}$/;"	f	class:evwork::THandle
+~TimerHandler	TimerHandler.h	/^	virtual ~TimerHandler()$/;"	f	class:TimerHandler
+~exception_errno	ExceptionErrno.h	/^		virtual ~exception_errno() throw() {};$/;"	f	class:evwork::exception_errno
