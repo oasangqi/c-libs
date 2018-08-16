@@ -23,11 +23,13 @@ namespace evwork
 		{
 			__reset();
 		}
+
 		~CBuffer()
 		{
 			__reset();
 		}
 
+		// 获取数据
 		const char* data() const
 		{
 			if (m_data == NULL)
@@ -35,11 +37,14 @@ namespace evwork
 
 			return m_data + m_head_off;
 		}
+
+		// 获取数据大小
 		uint32_t size() const
 		{
 			return m_tail_off - m_head_off;
 		}
 		
+		// 追加数据
 		void append(const char* _data, uint32_t _size)
 		{
 			if (_size == 0)
@@ -51,6 +56,7 @@ namespace evwork
 			m_tail_off += _size;
 		}
 
+		// 擦除部分数据
 		void erase(uint32_t _size)
 		{
 			if (_size == 0)
@@ -63,9 +69,14 @@ namespace evwork
 
 			m_head_off += _size;
 
+			// 擦除数据累计大于1个块，则进行缩小调整
 			if (m_head_off >= BlockSize)
 			{
-				__try_decrement();
+				// __try_decrement();
+
+				memmove(m_data, m_data + m_head_off + _size, datasize - _size);
+				m_head_off = 0;
+				m_tail_off = datasize - _size;
 			}
 		}
 
@@ -73,16 +84,20 @@ namespace evwork
 		{
 			__reset();
 		}
+
+		// 扩容
 		void inc_capacity(uint32_t _size)
 		{
 			__try_increment(_size);
 		}
 
+		// 获取空闲大小
 		uint32_t freesize()
 		{
 			return m_capacity - m_tail_off;
 		}
 
+		// 数据尾
 		char* tail()
 		{
 			if (m_data == NULL)
@@ -90,6 +105,8 @@ namespace evwork
 
 			return m_data + m_tail_off;
 		}
+
+		// 更新数据大小(追加数据之后必须执行该操作)
 		void inc_size(uint32_t _size)
 		{
 			m_tail_off += _size;
@@ -179,6 +196,7 @@ namespace evwork
 			}
 		}
 
+		// 分配向上取整个块大小
 		uint32_t __calc_capacity(uint32_t _size)
 		{
 			uint32_t block_count = _size / BlockSize;
@@ -192,14 +210,14 @@ namespace evwork
 		}
 
 	private:
-		uint32_t BlockSize;
-		uint32_t MinBlock;
+		uint32_t BlockSize; // 单个块大小
+		uint32_t MinBlock; // 缩小时最小保留块
 
-		char* m_data;
-		uint32_t m_capacity;
+		char* m_data; // 内存位置
+		uint32_t m_capacity; // 容量
 
-		uint32_t m_head_off;
-		uint32_t m_tail_off;
+		uint32_t m_head_off; // 数据头偏离内存头的位置
+		uint32_t m_tail_off; // 数据尾偏离内存头的位置
 	};
 
 }
