@@ -1,4 +1,4 @@
-cscope 15 $HOME/123/libevwork -q 0000000670 0000074942
+cscope 15 $HOME/backup/git-repos/c-libs/libevwork_full -q 0000000670 0000074967
 	@AsyncWriter.cpp
 
 9 
