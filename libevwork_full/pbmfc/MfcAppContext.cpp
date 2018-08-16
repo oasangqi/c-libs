@@ -8,7 +8,7 @@
 
 #include "MfcAppContext.h"
 
-#include "libevwork/EVWork.h"
+#include "../EVWork.h"
 
 using namespace evwork;
 using namespace pb;

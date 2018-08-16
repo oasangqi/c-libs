@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "libevwork/EVComm.h"
+#include "../EVComm.h"
 #include "Request.h"
 
 #include <memory>

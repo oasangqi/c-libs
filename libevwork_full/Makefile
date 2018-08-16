@@ -1,8 +1,8 @@
 INCLUDE = -I. -I..
 LIBRARY =
 
-CXXFLAGS    = -Wall -ggdb -pthread -D__DEBUG__
-CXXFLAGS_R    = -Wall -O2 -O3 -pthread
+CXXFLAGS    = -Wall -ggdb -O0 -pthread -D__DEBUG__
+CXXFLAGS_R    = -Wall -O2 -pthread
 
 LINKFLAGS   = -Wl,-rpath,./:../bin
 LINKFLAGS_MT = $(LINKFLAGS)
@@ -34,5 +34,5 @@ $(TARGET_R) : $(OBJ_FILES_R)
 all : $(TARGET) $(TARGET_R)
 
 clean :
-	-rm $(OBJ_FILES) $(OBJ_FILES_R)
-	-rm $(TARGET) $(TARGET_R)
+	rm -f $(OBJ_FILES) $(OBJ_FILES_R)
+	rm -f $(TARGET) $(TARGET_R)

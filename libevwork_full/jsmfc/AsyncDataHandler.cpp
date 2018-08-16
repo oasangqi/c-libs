@@ -8,7 +8,7 @@
 
 #include "AsyncDataHandler.h"
 
-#include "libevwork/EVWork.h"
+#include "../EVWork.h"
 #include "Request.h"
 
 #include <sys/syscall.h>

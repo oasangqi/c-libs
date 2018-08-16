@@ -8,7 +8,7 @@
 
 #include "DataHandler.h"
 
-#include "libevwork/EVWork.h"
+#include "../EVWork.h"
 #include "Request.h"
 
 using namespace evwork;

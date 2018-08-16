@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "libevwork/EVComm.h"
-#include "libevwork/TimerHandler.h"
+#include "../EVComm.h"
+#include "../TimerHandler.h"
 
 #include "FormDef.h"
 
