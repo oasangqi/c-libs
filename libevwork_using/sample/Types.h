@@ -3,7 +3,7 @@
 
 #include <set>
 #include "libtinyredis/RedisFactory.h"
-#include "libevwork/EVWork.h"
+#include "../EVWork.h"
 
 #define MSG_BUFF_SIZE 2000
 #define LOG_BUFF_SIZE 2048

@@ -1,7 +1,7 @@
 ﻿#ifndef _DISPATCH_H_
 #define _DISPATCH_H_
 
-#include "libevwork/FormDef.h"
+#include "../FormDef.h"
 
 class CDispatch
 	: public evwork::PHClass

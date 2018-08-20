@@ -2,8 +2,7 @@
 #include "Client.h"
 #include "Log.h"
 #include "protocol.h"
-#include "libevwork/JsonPacket.h"
-#include "EVWork.h"
+#include "../JsonPacket.h"
 #include "Helper.h"
 
 using namespace evwork;

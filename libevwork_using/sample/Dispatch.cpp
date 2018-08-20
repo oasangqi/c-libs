@@ -2,7 +2,7 @@
 #include "Dispatch.h"
 #include "protocol.h"
 #include "Client.h"
-#include "libevwork/EVWork.h"
+#include "../EVWork.h"
 
 using namespace evwork;
 extern struct g_args_s g_args;

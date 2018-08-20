@@ -7,7 +7,7 @@ LINKFLAGS   = -Wl,-rpath,./:../bin
 LINKFLAGS_MT = $(LINKFLAGS)
 
 CXXFLAGS_EXTERN =
-LINKFLAGS_EXTERN = -L./libev -lev -ljsoncpp  -L./libevwork -levwork -L./libtinyredis -ltinyredis -lhiredis 
+LINKFLAGS_EXTERN = -L./libev -lev -ljsoncpp  -L../ -levwork -L./libtinyredis -ltinyredis -lhiredis 
 
 TARGET   = robot
 

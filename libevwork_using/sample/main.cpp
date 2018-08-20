@@ -13,9 +13,9 @@
 #include "Types.h"
 #include "Log.h"
 #include "LinkEV.h"
-#include "libevwork/EVWork.h"
-#include "libevwork/JsonData.h"
-#include "libevwork/JsonMFC.h"
+#include "../EVWork.h"
+#include "../JsonData.h"
+#include "../JsonMFC.h"
 #include "libtinyredis/RedisFactory.h"
 #include "libtinyredis/RedisClient.h"
 

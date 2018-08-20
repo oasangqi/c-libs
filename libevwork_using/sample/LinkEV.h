@@ -1,7 +1,7 @@
 #ifndef _LINKEV_H_
 #define _LINKEV_H_
 
-#include "EVWork.h"
+#include "../EVWork.h"
 
 class LinkEV: public evwork::ILinkEvent
 {

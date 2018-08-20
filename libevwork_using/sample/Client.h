@@ -6,10 +6,10 @@
 #include "libev/ev.h"
 #include "Types.h"
 #include "Cardlib/handCards.h"
-#include "libevwork/EVWork.h"
-#include "libevwork/Logger.h"
+#include "../EVWork.h"
+#include "../Logger.h"
+#include "../JsonPacket.h"
 #include "libtinyredis/RedisFactory.h"
-#include "libevwork/JsonPacket.h"
 
 using namespace evwork;
 
