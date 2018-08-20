@@ -1,0 +1,76 @@
+{
+  "pid_file": "robot_hanshou.pid",
+  "log_path":"gameLog",
+  "games": [
+      {
+		"vid": 2001,
+		"host": "120.26.234.124",
+		"port": 20018,
+		"base_money": 20, 
+		"enter_money": 1000,
+		"leave_money": 600,
+		"fee": 20,
+		"indexs": [
+			{
+				"index": 1,
+				"start": 100000,
+				"end": 100001
+			},
+			{
+				"index": 2,
+				"start": 100002,
+				"end": 100003
+			}
+		]
+      },
+      {
+		"vid": 2002,
+		"host": "120.26.234.124",
+		"port": 20019,
+		"base_money": 50, 
+		"enter_money": 2000,
+		"leave_money": 2000,
+		"fee": 20,
+		"indexs": [
+			{
+				"index": 1,
+				"start": 100004,
+				"end": 100005
+			},
+			{
+				"index": 2,
+				"start": 100006,
+				"end": 100007
+			}
+		]
+      },
+      {
+		"vid": 2003,
+		"host": "120.26.234.124",
+		"port": 20020,
+		"base_money": 100, 
+		"enter_money": 4000,
+		"leave_money": 4000,
+		"fee": 40,
+		"indexs": [
+			{
+				"index": 1,
+				"start": 100008,
+				"end": 100009
+			},
+			{
+				"index": 2,
+				"start": 100010,
+				"end": 100011
+			}
+		]
+      }
+  ],
+  "main-db": [
+  	{   
+	  "host": "120.26.212.214",
+	  "port": 10005,
+	  "pass": "123456"
+  	} 
+  ]
+}

@@ -1,17 +1,18 @@
-INCLUDE = -I. -I..
+INCLUDE = -I. -I./libevwork 
 LIBRARY =
 
-CXXFLAGS    = -Wall -ggdb -pthread
+CXXFLAGS    = -Wall -ggdb  -O0 -pthread -D__DEBUG__
 
-LINKFLAGS   = -Wl,-rpath,./:../bin
+LINKFLAGS   = -Wl,-rpath,./:../bin 
 LINKFLAGS_MT = $(LINKFLAGS)
 
 CXXFLAGS_EXTERN =
-LINKFLAGS_EXTERN = -L../ -levwork -lev
+LINKFLAGS_EXTERN = -L./libev -lev -ljsoncpp  -L./libevwork -levwork -L./libtinyredis -ltinyredis -lhiredis 
 
-TARGET   = test
+TARGET   = robot
 
-SRC_FILES   = $(wildcard *.cpp)
+SRC_FILES   = $(wildcard *.cpp \
+			  Cardlib/*.cpp)
 
 OBJ_FILES   = $(SRC_FILES:.cpp=.o)
 
@@ -28,5 +29,5 @@ $(TARGET) : $(OBJ_FILES)
 all : $(TARGET)
 
 clean :
-	-rm $(OBJ_FILES)
-	-rm $(TARGET)
+	rm -f $(OBJ_FILES)
+	rm -f $(TARGET)

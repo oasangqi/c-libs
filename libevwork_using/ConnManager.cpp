@@ -1,5 +1,4 @@
 ﻿#include "ConnManager.h"
-
 #include "EVWork.h"
 
 using namespace evwork;
@@ -8,10 +7,12 @@ CConnManager::CConnManager()
 : m_uLastConnId(1)
 {
 }
+
 CConnManager::~CConnManager()
 {
 }
 
+// 通过cid获取已建立的连接
 IConn* CConnManager::getConnById(uint32_t uConnId)
 {
 	std::map<uint32_t, IConn*>::iterator iter = m_mapCIdConn.find(uConnId);
@@ -21,32 +22,17 @@ IConn* CConnManager::getConnById(uint32_t uConnId)
 	return iter->second;
 }
 
-IConn* CConnManager::getConnByIpPort(const std::string& strIp, uint16_t uPort)
+// 建立连接
+IConn* CConnManager::connectServer(const std::string& strIp, uint16_t uPort)
 {
-	std::string strKey = __toIpPortKey(strIp, uPort);
+	CClientConn* pConn = new CClientConn(strIp, uPort);
 
-	std::map<std::string, IConn*>::iterator iter = m_mapIpPortConn.find(strKey);
-	if (iter != m_mapIpPortConn.end())
-		return iter->second;
+	if (pConn->getfd() < 0) {
+		delete pConn;
+		return NULL;
+	}
 
-	CClientConn* pNew = new CClientConn(strIp, uPort);
-	m_mapIpPortConn[strKey] = pNew;
-
-	return pNew;
-}
-
-IConn* CConnManager::getConnByIpPort2(const std::string& strIp, uint16_t uPort)
-{
-
-	CClientConn* pNew = new CClientConn(strIp, uPort);
-	std::string strKey = __toIpPortKey(strIp, pNew->getfd());
-	std::map<std::string, IConn*>::iterator iter = m_mapIpPortConn.find(strKey);
-	if (iter != m_mapIpPortConn.end())
-		return iter->second;
-
-	m_mapIpPortConn[strKey] = pNew;
-
-	return pNew;
+	return pConn;
 }
 
 void CConnManager::onConnected(IConn* pConn)
@@ -69,12 +55,6 @@ void CConnManager::onClose(IConn* pConn)
 	__notifyLEClose(pConn);
 
 	m_mapCIdConn.erase( pConn->getcid() );
-
-	std::string strPeerIp = "";
-	uint16_t uPeerPort = 0;
-	pConn->getPeerInfo(strPeerIp, uPeerPort);
-
-	m_mapIpPortConn.erase( __toIpPortKey(strPeerIp, uPeerPort) );
 }
 
 void CConnManager::addLE(ILinkEvent* p)
@@ -103,9 +83,3 @@ void CConnManager::__notifyLEClose(IConn* pConn)
 	}
 }
 
-std::string CConnManager::__toIpPortKey(const std::string& strIp, uint16_t uPort)
-{
-	std::stringstream ssKey;
-	ssKey << strIp << ":" << uPort;
-	return ssKey.str();
-}

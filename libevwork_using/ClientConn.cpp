@@ -1,4 +1,5 @@
 ﻿#include "ClientConn.h"
+#include <netdb.h>
 
 #include "EVWork.h"
 
@@ -32,7 +33,10 @@ CClientConn::CClientConn(const std::string& strPeerIp, uint16_t uPeerPort16)
 	sinto.sin_addr.s_addr = ::inet_addr(m_strPeerIp.c_str());
 	sinto.sin_port = htons(m_uPeerPort16);
 
-	connect(m_fd, (struct sockaddr*)&sinto, sizeof(sinto));
+	if (!__connect()) {
+		close(m_fd);
+		m_fd = -1;
+	}
 
 	m_hRead.setEv(EV_READ);
 	m_hRead.setFd(m_fd);
@@ -171,6 +175,36 @@ void CClientConn::__noblock()
 	int nRet = fcntl(m_fd, F_SETFL, nFlags);
 	if (nRet == -1)
 		throw exception_errno( toString("[CListenConn::%s] fcntl(%d, F_SETFL) failed!", __FUNCTION__, m_fd) );
+}
+
+// 非阻塞连接，即使返回true，也不一定连上了(可能服务器繁忙或是压根就连不上)
+bool CClientConn::__connect()
+{
+	bool	ret = true;
+	char _port[6];  /* strlen("65535"); */
+	struct addrinfo hints, *servinfo, *p; 
+
+	snprintf(_port, 6, "%d", m_uPeerPort16);
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = AF_INET;
+	hints.ai_socktype = SOCK_STREAM;
+	if (getaddrinfo(m_strPeerIp.c_str(), _port, &hints, &servinfo) != 0) {
+		return false;
+	} 
+	for (p = servinfo; p != NULL; p = p->ai_next) {
+		if (connect(m_fd, p->ai_addr, p->ai_addrlen) != 0
+				&& errno != EINPROGRESS) {
+			continue;
+		}
+		goto end;
+	}
+	if (p == NULL) {
+		LOG(Info, "[CClientConn::%s] can't connect:[%s:%d]", __FUNCTION__, m_strPeerIp.c_str(), m_uPeerPort16);
+	}
+	ret = false;
+end:
+	freeaddrinfo(servinfo);
+	return ret;
 }
 
 void CClientConn::__initTimerNoData()
@@ -322,7 +356,7 @@ void CClientConn::__onRead()
 
 void CClientConn::__onWrite()
 {
-	// 当作客户端使用时才会进入以下判断
+	// 当作客户端使用时才会进入以下判断，开始发送数据了说明连接成功了
 	if (!m_bConnected)
 	{
 		int e = 0;
@@ -447,7 +481,7 @@ size_t CClientConn::__recvData(char* pData, size_t uSize)
 
 void CClientConn::__willFreeMyself(const std::string& strDesc)
 {
-	LOG(Info, "[CClientConn::%s] fd:[%d] peer:[%s:%u], %s, delete myself", __FUNCTION__, m_fd, m_strPeerIp.c_str(), m_uPeerPort16, strDesc.c_str());
+	LOG(Info, "[CClientConn::%s] fd:[%d] Conn:[%p] peer:[%s:%u], %s, delete myself", __FUNCTION__, m_fd, this, m_strPeerIp.c_str(), m_uPeerPort16, strDesc.c_str());
 
 	// delete时通过析构函数关闭连接
 	delete this;
