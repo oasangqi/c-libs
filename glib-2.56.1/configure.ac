@@ -252,6 +252,10 @@ AC_ARG_ENABLE(gc_friendly,
               [AS_HELP_STRING([--enable-gc-friendly],
                               [turn on garbage collector friendliness [default=no]])],,
               [enable_gc_friendly=no])
+AC_ARG_ENABLE(epoll_ev,
+              [AS_HELP_STRING([--enable-epoll-ev],
+                              [use epoll for event loop [default=no]])],,
+              [enable_epoll_ev=no])
 AC_ARG_ENABLE(mem_pools,
               [AS_HELP_STRING([--disable-mem-pools],
 			      [disable all glib memory pools])],,
@@ -262,6 +266,12 @@ GLIB_TESTS
 AC_MSG_CHECKING([whether to enable garbage collector friendliness])
 AS_IF([test "x$enable_gc_friendly" = "xyes"], [
   AC_DEFINE(ENABLE_GC_FRIENDLY_DEFAULT, 1, [Whether to enable GC friendliness by default])
+  AC_MSG_RESULT([yes])
+], [ AC_MSG_RESULT([no]) ])
+
+AC_MSG_CHECKING([whether to use epoll for event loop])
+AS_IF([test "x$enable_epoll_ev" = "xyes"], [
+  AC_DEFINE(USE_EPOLL_EV, 1, [Whether to enable epoll by default])
   AC_MSG_RESULT([yes])
 ], [ AC_MSG_RESULT([no]) ])
 

@@ -32,6 +32,9 @@
 /* Whether to enable GC friendliness by default */
 #mesondefine ENABLE_GC_FRIENDLY_DEFAULT
 
+/* Whether to enable epoll by default */
+#mesondefine USE_EPOLL_EV
+
 /* always defined to indicate that i18n is enabled */
 #mesondefine ENABLE_NLS
 

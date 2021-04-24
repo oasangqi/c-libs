@@ -33,6 +33,7 @@
 #include "config.h"
 #include "glibconfig.h"
 #include "giochannel.h"
+#include <string.h>
 
 /* Uncomment the next line (and the corresponding line in gmain.c) to
  * enable debugging printouts if the environment variable
@@ -55,6 +56,10 @@
 #endif /* HAVE_SYS_TIME_H */
 #ifdef HAVE_POLL
 #  include <poll.h>
+#ifdef USE_EPOLL_EV
+#include <unistd.h>
+#include <fcntl.h>
+#endif
 
 /* The poll() emulation on OS/X doesn't handle fds=NULL, nfds=0,
  * so we prefer our own poll emulation.
@@ -123,6 +128,105 @@ g_poll (GPollFD *fds,
 {
   return poll ((struct pollfd *)fds, nfds, timeout);
 }
+
+#ifdef USE_EPOLL_EV
+
+#define EVENTS_BASE	64
+#define FDS_BASE	1024
+gint
+g_epoll (GPollCTX *ctx, int timeout)
+{
+	int i;
+	int fd;
+
+	ctx->got = epoll_wait(ctx->backend_fd, ctx->epoll_events, ctx->epoll_eventmax, timeout?timeout:1);
+	if (ctx->got <= 0) {
+		return ctx->got;
+	}
+	for (i = 0; i < ctx->got; i++) {
+		fd = (uint32_t)ctx->epoll_events[i].data.u64;
+		if (fd >= ctx->nfds || ctx->anfds[fd].egen != (uint32_t)(ctx->epoll_events[i].data.u64 >> 32)) {
+			continue;
+		}
+		ctx->anfds[fd].revents = ctx->epoll_events[i].events;
+	}
+	if (ctx->got == ctx->epoll_eventmax) {   
+		ctx->epoll_eventmax += EVENTS_BASE;
+		ctx->epoll_events = (struct epoll_event *)realloc (ctx->epoll_events, sizeof(struct epoll_event) * ctx->epoll_eventmax);
+	}  
+	return ctx->got;
+}
+
+void g_epoll_init (GPollCTX *ctx)
+{
+	do {
+		ctx->backend_fd = epoll_create(256);
+	} while (ctx->backend_fd < 0);
+
+	fcntl(ctx->backend_fd, F_SETFD, FD_CLOEXEC);
+
+	ctx->epoll_eventmax = EVENTS_BASE;
+	ctx->epoll_events = (struct epoll_event *)malloc(sizeof(struct epoll_event) * ctx->epoll_eventmax);
+	ctx->nfds = FDS_BASE;
+	ctx->anfds = (GPollFD *)calloc(ctx->nfds, sizeof (GPollFD));
+
+	return ;
+}
+
+void g_epoll_modify(GPollCTX *ctx, GPollFD *poll_fd, int nev)
+{
+	struct epoll_event ev;
+	int oev;
+
+	if (poll_fd->fd == ctx->nfds) {
+		ctx->nfds += FDS_BASE;
+		ctx->anfds = (GPollFD *)realloc(ctx->anfds, sizeof(GPollFD) * ctx->nfds);
+		memset(ctx->anfds + ctx->nfds - FDS_BASE, 0, sizeof(GPollFD) * FDS_BASE);
+	}
+
+	if (!nev) {
+		ctx->anfds[poll_fd->fd].events = 0;
+		ctx->anfds[poll_fd->fd].revents = 0;
+		ctx->anfds[poll_fd->fd].egen = 0;
+		epoll_ctl(ctx->backend_fd, EPOLL_CTL_DEL, poll_fd->fd, &ev);
+		return;
+	}
+
+	oev = ctx->anfds[poll_fd->fd].events;
+	if (oev == nev) {
+		return;
+	}
+
+	ctx->anfds[poll_fd->fd].events = nev;
+	ctx->anfds[poll_fd->fd].egen = 0;
+
+	ev.data.u64 = (uint64_t)(uint32_t)poll_fd->fd
+		| ((uint64_t)(uint32_t)++ctx->anfds[poll_fd->fd].egen << 32);
+	ev.events   = (nev & G_IO_IN ? EPOLLIN: 0)
+		| (nev & G_IO_OUT ? EPOLLOUT: 0);
+	if (oev) {
+		if (!epoll_ctl(ctx->backend_fd, EPOLL_CTL_MOD, poll_fd->fd, &ev)) {
+			return;
+		}
+		if (errno == ENOENT) {   
+			if (!epoll_ctl(ctx->backend_fd, EPOLL_CTL_ADD, poll_fd->fd, &ev)) {
+				return;
+			}
+		}
+		return;
+	}
+	if (!epoll_ctl(ctx->backend_fd, EPOLL_CTL_ADD, poll_fd->fd, &ev)) {
+		return;
+	}
+	if (errno == EEXIST) {   
+		if (!epoll_ctl(ctx->backend_fd, EPOLL_CTL_MOD, poll_fd->fd, &ev)) {
+			return;
+		}
+	}
+	return;
+}
+#endif
+
 
 #else	/* !HAVE_POLL */
 

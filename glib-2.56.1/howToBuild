@@ -1,0 +1,4 @@
+# build steps
+sh autogen.sh
+./configure --includedir=/usr/include --libdir=/usr/lib64 --bindir=/bin/ --datarootdir=/usr/share/ --enable-epoll-ev
+make install

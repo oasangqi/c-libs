@@ -292,6 +292,9 @@ struct _GMainContext
   gboolean poll_changed;
 
   GPollFunc poll_func;
+#ifdef USE_EPOLL_EV
+  GPollCTX poll_ctx;
+#endif
 
   gint64   time;
   gboolean time_is_fresh;
@@ -644,7 +647,12 @@ g_main_context_new (void)
   
   context->source_lists = NULL;
   
+#ifdef USE_EPOLL_EV
+  context->poll_func = g_epoll;
+  g_epoll_init(&context->poll_ctx);
+#else
   context->poll_func = g_poll;
+#endif
   
   context->cached_poll_array = NULL;
   context->cached_poll_array_size = 0;
@@ -3671,6 +3679,14 @@ g_main_context_check (GMainContext *context,
 
   TRACE (GLIB_MAIN_CONTEXT_BEFORE_CHECK (context, max_priority, fds, n_fds));
 
+#ifdef USE_EPOLL_EV
+  if (context->wake_up_rec.fd > 0 && context->wake_up_rec.fd < context->poll_ctx.nfds
+          && context->poll_ctx.anfds[context->wake_up_rec.fd].revents) {
+      TRACE (GLIB_MAIN_CONTEXT_WAKEUP_ACKNOWLEDGE (context));
+      g_wakeup_acknowledge (context->wakeup);
+	  context->poll_ctx.anfds[context->wake_up_rec.fd].revents = 0;
+  }
+#else
   for (i = 0; i < n_fds; i++)
     {
       if (fds[i].fd == context->wake_up_rec.fd)
@@ -3683,6 +3699,7 @@ g_main_context_check (GMainContext *context,
           break;
         }
     }
+#endif
 
   /* If the set of poll file descriptors changed, bail out
    * and let the main loop rerun
@@ -3697,6 +3714,18 @@ g_main_context_check (GMainContext *context,
 
   pollrec = context->poll_records;
   i = 0;
+#ifdef USE_EPOLL_EV
+  // 取所有pollrec关注的事件，不同pollrec可能有相同的fd
+  while (pollrec) {
+	  int fd = pollrec->fd->fd;
+	  if (fd < context->poll_ctx.nfds && pollrec->priority <= max_priority)
+	  {
+		  pollrec->fd->revents =
+			  context->poll_ctx.anfds[fd].revents & (pollrec->fd->events | G_IO_ERR | G_IO_HUP | G_IO_NVAL);
+	  }
+	  pollrec = pollrec->next;
+  }
+#else
   while (pollrec && i < n_fds)
     {
       while (pollrec && pollrec->fd->fd == fds[i].fd)
@@ -3711,6 +3740,7 @@ g_main_context_check (GMainContext *context,
 
       i++;
     }
+#endif
 
   g_source_iter_init (&iter, context, TRUE);
   while (g_source_iter_next (&iter, &source))
@@ -3757,6 +3787,7 @@ g_main_context_check (GMainContext *context,
 
                   if (pollfd->revents)
                     {
+						context->poll_ctx.anfds[pollfd->fd].revents = 0;
                       result = TRUE;
                       break;
                     }
@@ -3869,6 +3900,16 @@ g_main_context_iterate (GMainContext *context,
   else
     LOCK_CONTEXT (context);
   
+#ifdef USE_EPOLL_EV
+  UNLOCK_CONTEXT (context);
+
+  g_main_context_prepare (context, &max_priority); 
+
+  context->poll_changed = FALSE;
+  timeout = context->timeout;
+  if (timeout != 0)
+	  context->time_is_fresh = FALSE;
+#else
   if (!context->cached_poll_array)
     {
       context->cached_poll_array_size = context->n_poll_records;
@@ -3891,6 +3932,7 @@ g_main_context_iterate (GMainContext *context,
       context->cached_poll_array = fds = g_new (GPollFD, nfds);
       UNLOCK_CONTEXT (context);
     }
+#endif
 
   if (!block)
     timeout = 0;
@@ -4174,6 +4216,26 @@ g_main_context_poll (GMainContext *context,
 		     GPollFD      *fds,
 		     gint          n_fds)
 {
+#ifdef USE_EPOLL_EV
+	GPollFunc poll_func;
+
+	int ret, errsv;
+
+	LOCK_CONTEXT (context);
+
+	poll_func = context->poll_func;
+
+	UNLOCK_CONTEXT (context);
+	ret = (*poll_func) (&context->poll_ctx, timeout);
+	errsv = errno;
+	if (ret < 0 && errsv != EINTR)
+	{
+		g_warning ("poll(2) failed due to: %s.",
+				g_strerror (errsv));
+		/* If g_poll () returns -1, it has already called g_warning() */
+	}
+#else
+
 #ifdef  G_MAIN_POLL_DEBUG
   GTimer *poll_timer;
   GPollRec *pollrec;
@@ -4259,6 +4321,7 @@ g_main_context_poll (GMainContext *context,
 	}
 #endif
     } /* if (n_fds || timeout != 0) */
+#endif // USE_EPOLL_EV
 }
 
 /**
@@ -4298,6 +4361,7 @@ g_main_context_add_poll_unlocked (GMainContext *context,
 {
   GPollRec *prevrec, *nextrec;
   GPollRec *newrec = g_slice_new (GPollRec);
+  uint32_t events = fd->events;
 
   /* This file descriptor may be checked before we ever poll */
   fd->revents = 0;
@@ -4308,6 +4372,10 @@ g_main_context_add_poll_unlocked (GMainContext *context,
   nextrec = context->poll_records;
   while (nextrec)
     {
+#ifdef USE_EPOLL_EV
+	  if (nextrec->fd->fd == fd->fd) 
+		  events |= nextrec->fd->events;
+#endif
       if (nextrec->fd->fd > fd->fd)
         break;
       prevrec = nextrec;
@@ -4327,10 +4395,14 @@ g_main_context_add_poll_unlocked (GMainContext *context,
 
   context->n_poll_records++;
 
+#ifdef USE_EPOLL_EV
+  g_epoll_modify(&context->poll_ctx, fd, events);
+#else
   context->poll_changed = TRUE;
 
   /* Now wake up the main loop if it is waiting in the poll() */
   g_wakeup_signal (context->wakeup);
+#endif
 }
 
 /**
@@ -4361,6 +4433,7 @@ g_main_context_remove_poll_unlocked (GMainContext *context,
 				     GPollFD      *fd)
 {
   GPollRec *pollrec, *prevrec, *nextrec;
+  uint32_t events = 0;
 
   prevrec = NULL;
   pollrec = context->poll_records;
@@ -4387,10 +4460,23 @@ g_main_context_remove_poll_unlocked (GMainContext *context,
       pollrec = nextrec;
     }
 
+#ifdef USE_EPOLL_EV
+  nextrec = context->poll_records;
+  while (nextrec)
+    {
+	  if (nextrec->fd->fd == fd->fd) 
+		  events |= nextrec->fd->events;
+      if (nextrec->fd->fd > fd->fd)
+        break;
+      nextrec = nextrec->next;
+    }
+  g_epoll_modify(&context->poll_ctx, fd, events);
+#else
   context->poll_changed = TRUE;
 
   /* Now wake up the main loop if it is waiting in the poll() */
   g_wakeup_signal (context->wakeup);
+#endif
 }
 
 /**
@@ -4478,7 +4564,11 @@ g_main_context_set_poll_func (GMainContext *context,
   if (func)
     context->poll_func = func;
   else
+#ifdef USE_EPOLL_EV
+    context->poll_func = g_epoll;
+#else
     context->poll_func = g_poll;
+#endif
 
   UNLOCK_CONTEXT (context);
 }

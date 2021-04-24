@@ -24,6 +24,9 @@
 
 #include <glibconfig.h>
 #include <glib/gtypes.h>
+#ifdef USE_EPOLL_EV
+#include <sys/epoll.h>
+#endif
 
 G_BEGIN_DECLS
 
@@ -57,6 +60,19 @@ G_BEGIN_DECLS
  * Windows.
  */
 typedef struct _GPollFD GPollFD;
+#ifdef USE_EPOLL_EV
+typedef struct _GPollCtx GPollCTX;
+
+struct _GPollCtx
+{
+	gint		backend_fd;
+	int	epoll_eventmax;
+	struct epoll_event	*epoll_events;
+	int	got;
+	int	nfds;
+	GPollFD *anfds;
+};
+#endif
 
 /**
  * GPollFunc:
@@ -71,9 +87,14 @@ typedef struct _GPollFD GPollFD;
  * Returns: the number of #GPollFD elements which have events or errors
  *     reported, or -1 if an error occurred.
  */
+#ifdef USE_EPOLL_EV
+typedef gint    (*GPollFunc)	(GPollCTX *ctx, 
+                                 gint     timeout_);
+#else
 typedef gint    (*GPollFunc)    (GPollFD *ufds,
                                  guint    nfsd,
                                  gint     timeout_);
+#endif
 
 /**
  * GPollFD:
@@ -99,6 +120,9 @@ struct _GPollFD
 #endif
   gushort 	events;
   gushort 	revents;
+#ifdef USE_EPOLL_EV
+  guint egen;
+#endif
 };
 
 /**
@@ -115,6 +139,13 @@ g_poll (GPollFD *fds,
 	guint    nfds,
 	gint     timeout);
 
+#ifdef USE_EPOLL_EV
+gint
+g_epoll(GPollCTX *ctx, int timeout);
+
+void g_epoll_init(GPollCTX *ctx);
+void g_epoll_modify(GPollCTX *ctx, GPollFD *poll_fd, int nev);
+#endif
 G_END_DECLS
 
 #endif /* __G_POLL_H__ */
